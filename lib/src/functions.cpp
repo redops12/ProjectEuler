@@ -1,9 +1,11 @@
 #include "functions.h"
 
 using std::distance;
+using std::vector;
 
 template <class T>
-typename std::vector<T>::iterator binary_search(const vector<T> &array, T item) {
+typename vector<T>::iterator binary_search(vector<T> &array, T item)
+{
     if (array.size() == 0) return array.end();
     if (array.back() < item) return array.end();
     size_t left = 0;
@@ -22,3 +24,5 @@ typename std::vector<T>::iterator binary_search(const vector<T> &array, T item) 
 
     return array.begin() + left;
 }
+
+template vector<int>::iterator binary_search(vector<int> &array, int item);

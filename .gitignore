@@ -1,2 +1,6 @@
 build/
 CMakeFiles/
+.git/
+liblib.so
+cmake_install.cmake
+CMakeCache.txt
