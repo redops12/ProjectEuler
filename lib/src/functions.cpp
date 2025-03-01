@@ -4,7 +4,7 @@ using std::distance;
 using std::vector;
 
 template <class T>
-typename vector<T>::iterator binary_search(vector<T> &array, T item)
+size_t binary_search(vector<T> &array, T item)
 {
     if (array.size() == 0) return array.end();
     if (array.back() < item) return array.end();
@@ -22,7 +22,7 @@ typename vector<T>::iterator binary_search(vector<T> &array, T item)
         }
     }
 
-    return array.begin() + left;
+    return left;
 }
 
-template vector<int>::iterator binary_search(vector<int> &array, int item);
+size_t binary_search(vector<int> &array, int item);
