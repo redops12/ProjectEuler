@@ -49,6 +49,12 @@ bool is_prime(uint64_t num) {
     if (num < known_primes.back()) {
         return binary_search(known_primes.begin(), known_primes.end(), num);
     }
+    if (known_primes.back() * known_primes.back() < num) {
+        PrimeIterator p;
+        while ((*p) * (*p) < num) {
+            ++p;
+        }
+    }
     for (auto p : known_primes) {
         if (p * p > num) {
             break;
