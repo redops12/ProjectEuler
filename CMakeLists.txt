@@ -31,3 +31,5 @@ add_test(NAME test10 COMMAND sol10)
 add_executable( sol60 solutions/60.cpp )
 target_link_libraries( sol60 PRIVATE lib )
 add_test(NAME test60 COMMAND sol60)
+
+add_executable( sol11 solutions/11.cpp )
