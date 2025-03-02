@@ -7,7 +7,6 @@
 #include <cassert>
 #include "prime.h"
 #include "strint.h"
-#include "functions.h"
 
 using namespace std;
 

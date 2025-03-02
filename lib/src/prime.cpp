@@ -1,5 +1,4 @@
 #include <vector>
-#include "functions.h"
 #include "prime.h"
 #include <algorithm>
 

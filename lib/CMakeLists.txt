@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
 set(SRC_FILES
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/functions.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/prime.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/strint.cpp
 )

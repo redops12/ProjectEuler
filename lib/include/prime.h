@@ -1,7 +1,5 @@
-#include <vector>
 #include <cstdint>
-
-using std::vector;
+#include <map>
 
 class PrimeIterator {
 private:
@@ -12,6 +10,13 @@ public:
     PrimeIterator& operator++();
     bool operator!=(const PrimeIterator& other) const;
     PrimeIterator operator+(int offset);
+};
+
+class Factorized {
+public:
+    Factorized(int num);
+    std::map<int, int> factors;
+    int num_divisors();
 };
 
 bool is_prime(uint64_t num);
