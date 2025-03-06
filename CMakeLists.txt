@@ -48,6 +48,14 @@ add_executable( sol17 solutions/17.cpp )
 
 add_executable( sol18 solutions/18.cpp )
 
+add_executable( sol19 solutions/19.cpp )
+
+add_executable( sol20 solutions/20.cpp )
+target_link_libraries( sol20 PRIVATE lib )
+add_test(NAME test20 COMMAND sol20)
+
+add_executable( sol21 solutions/21.cpp )
+
 add_executable( sol60 solutions/60.cpp )
 target_link_libraries( sol60 PRIVATE lib )
 add_test(NAME test60 COMMAND sol60)
