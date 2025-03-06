@@ -17,6 +17,8 @@ public:
     Factorized(int num);
     std::map<int, int> factors;
     int num_divisors();
+    bool is_square();
 };
 
 bool is_prime(uint64_t num);
+bool fast_is_square(uint64_t num);

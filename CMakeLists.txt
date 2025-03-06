@@ -10,6 +10,9 @@ add_subdirectory(lib)
 # Testing
 include(CTest)
 
+add_executable( tests solutions/tests.cpp )
+target_link_libraries( tests PRIVATE lib )
+add_test(NAME tests COMMAND tests)
 
 # Solutions
 add_executable( sol7 solutions/7.cpp )
@@ -43,7 +46,21 @@ add_executable( sol16 solutions/16.cpp )
 
 add_executable( sol17 solutions/17.cpp )
 
+add_executable( sol18 solutions/18.cpp )
+
 add_executable( sol60 solutions/60.cpp )
 target_link_libraries( sol60 PRIVATE lib )
 add_test(NAME test60 COMMAND sol60)
+
+add_executable( sol64 solutions/64.cpp )
+target_link_libraries( sol64 PRIVATE lib )
+add_test(NAME test64 COMMAND sol64)
+
+add_executable( sol66 solutions/66.cpp )
+target_link_libraries( sol66 PRIVATE lib )
+add_test(NAME test66 COMMAND sol66)
+
+add_executable( sol67 solutions/67.cpp )
+
+add_executable( sol206 solutions/206.cpp )
 

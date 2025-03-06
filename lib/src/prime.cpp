@@ -45,6 +45,36 @@ PrimeIterator PrimeIterator::operator+(int offset) {
     return prime_copy;
 }
 
+Factorized::Factorized(int num) {
+    PrimeIterator it;
+    while (num != 1) {
+        if (num % *it == 0) {
+            this->factors[*it]++;
+            num /= *it;
+            it = PrimeIterator();
+        } else {
+            ++it;
+        }
+    }
+}
+
+int Factorized::num_divisors() {
+    int divisors = 1;
+    for (auto p : factors) {
+        divisors *= p.second + 1;
+    }
+    return divisors;
+}
+
+bool Factorized::is_square() {
+    for (auto p : factors) {
+        if (p.second % 2 != 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
 bool is_prime(uint64_t num) {
     if (num < known_primes.back()) {
         return binary_search(known_primes.begin(), known_primes.end(), num);
@@ -65,4 +95,21 @@ bool is_prime(uint64_t num) {
         }
     }
     return true;
+}
+
+bool fast_is_square(uint64_t num) {
+    PrimeIterator it;
+    while ((*it) * (*it) <= num) {
+        if (num % *it == 0) {
+            num /= *it;
+            if (num % *it != 0) {
+                return false;
+            }
+            num /= *it;
+            it = PrimeIterator();
+        } else {
+            ++it;
+        }
+    }
+    return num == 1;
 }
