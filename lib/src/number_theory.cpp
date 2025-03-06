@@ -94,6 +94,10 @@ ContinuedFrac::ContinuedFrac(int c) {
     } while (!(r == repeated_r));
 }
 
+ContinuedFrac::ContinuedFrac(vector<int> v) {
+    repeated = v;
+}
+
 std::pair<cpp_int, cpp_int> ContinuedFrac::convergent() {
     cpp_int num = 0, denom = 1;
     for (auto it = repeated.rbegin() + 1; it != repeated.rend(); ++it) {

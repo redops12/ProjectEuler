@@ -46,5 +46,6 @@ class ContinuedFrac {
 
     // Generate continued_frac from sqrt
     ContinuedFrac(int c);
+    ContinuedFrac(std::vector<int> v);
     std::pair<boost::multiprecision::cpp_int, boost::multiprecision::cpp_int> convergent();
 };

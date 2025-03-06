@@ -56,6 +56,10 @@ add_executable( sol64 solutions/64.cpp )
 target_link_libraries( sol64 PRIVATE lib )
 add_test(NAME test64 COMMAND sol64)
 
+add_executable( sol65 solutions/65.cpp )
+target_link_libraries( sol65 PRIVATE lib )
+add_test(NAME test65 COMMAND sol65)
+
 add_executable( sol66 solutions/66.cpp )
 target_link_libraries( sol66 PRIVATE lib )
 add_test(NAME test66 COMMAND sol66)
