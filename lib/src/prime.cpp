@@ -75,7 +75,9 @@ bool Factorized::is_square() {
     return true;
 }
 
-bool is_prime(uint64_t num) {
+bool is_prime(int64_t num) {
+    if (num < 0) num = num * -1;
+    if (num == 0 || num == 1) return false;
     if (num < known_primes.back()) {
         return binary_search(known_primes.begin(), known_primes.end(), num);
     }

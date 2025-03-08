@@ -56,6 +56,20 @@ add_test(NAME test20 COMMAND sol20)
 
 add_executable( sol21 solutions/21.cpp )
 
+add_executable( sol22 solutions/22.cpp )
+
+add_executable( sol23 solutions/23.cpp )
+
+add_executable( sol25 solutions/25.cpp )
+
+add_executable( sol26 solutions/26.cpp )
+target_link_libraries( sol26 PRIVATE lib )
+add_test(NAME test26 COMMAND sol26)
+
+add_executable( sol27 solutions/27.cpp )
+target_link_libraries( sol27 PRIVATE lib )
+add_test(NAME test27 COMMAND sol27)
+
 add_executable( sol60 solutions/60.cpp )
 target_link_libraries( sol60 PRIVATE lib )
 add_test(NAME test60 COMMAND sol60)

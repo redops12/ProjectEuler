@@ -20,5 +20,5 @@ public:
     bool is_square();
 };
 
-bool is_prime(uint64_t num);
+bool is_prime(int64_t num);
 bool fast_is_square(uint64_t num);
