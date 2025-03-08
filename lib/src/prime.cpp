@@ -81,7 +81,7 @@ bool is_prime(int64_t num) {
     if (num < known_primes.back()) {
         return binary_search(known_primes.begin(), known_primes.end(), num);
     }
-    if (known_primes.back() * known_primes.back() < num) {
+    if (static_cast<uint64_t>(known_primes.back()) * known_primes.back() < num) {
         PrimeIterator p;
         while ((*p) * (*p) < num) {
             ++p;
