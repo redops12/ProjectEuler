@@ -18,6 +18,10 @@ public:
     std::map<int, int> factors;
     int num_divisors();
     bool is_square();
+    void power_of(int num);
+
+    // this operator does not actually measure less
+    bool operator<(const Factorized &rhs) const;
 };
 
 bool is_prime(int64_t num);

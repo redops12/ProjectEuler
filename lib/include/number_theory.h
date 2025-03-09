@@ -1,8 +1,22 @@
 #include <vector>
+#include <string>
 #include <boost/multiprecision/cpp_int.hpp>
 
 template <class T>
 T gcd(T a, T b);
+
+template <class T>
+class Frac {
+private:
+    T num;
+    T denom;
+public:
+    Frac(T num, T denom);
+    bool operator==(const Frac& other) const;
+    Frac<T> operator*(const Frac& rhs) const;
+    operator std::string() const;
+    void reduce();
+};
 
 class RadicalRational {
     // Expression of form
@@ -49,3 +63,6 @@ class ContinuedFrac {
     ContinuedFrac(std::vector<int> v);
     std::pair<boost::multiprecision::cpp_int, boost::multiprecision::cpp_int> convergent();
 };
+
+// include template definitions
+#include "number_theory.tpp"

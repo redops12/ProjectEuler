@@ -75,6 +75,29 @@ bool Factorized::is_square() {
     return true;
 }
 
+bool Factorized::operator<(const Factorized &rhs) const {
+    auto pair = factors.begin();
+    auto pair_rhs = rhs.factors.begin();
+    while (pair != factors.end() && pair_rhs != rhs.factors.end()) {
+        if (pair->first < pair_rhs->first) return true;
+        if (pair->first > pair_rhs->first) return false;
+        if (pair->second < pair_rhs->second) return true;
+        if (pair->second > pair_rhs->second) return false;
+        pair++;
+        pair_rhs++;
+    }
+    if (pair == factors.end() && pair_rhs == rhs.factors.end()) return false;
+    if (pair == factors.end()) return true;
+    if (pair_rhs == rhs.factors.end()) return false;
+    return true;
+}
+
+void Factorized::power_of(int num) {
+    for (auto &p : factors) {
+        p.second *= num;
+    }
+}
+
 bool is_prime(int64_t num) {
     if (num < 0) num = num * -1;
     if (num == 0 || num == 1) return false;
