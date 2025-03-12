@@ -1,5 +1,21 @@
 
 template <class T>
+T gcd(T a, T b) {
+    a = abs(a);
+    b = abs(b);
+    if (a < b) {
+        std::swap(a, b);
+    }
+    while (true) {
+        if (b == 0)
+            return a;
+        T r = a % b;
+        a = b;
+        b = r;
+    }
+}
+
+template <class T>
 Frac<T>::Frac(T num, T denom): num(num), denom(denom) {}
 
 template <class T>
@@ -25,5 +41,3 @@ void Frac<T>::reduce() {
     this->num   /= gcd_res;
     this->denom /= gcd_res;
 }
-
-

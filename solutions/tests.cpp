@@ -30,4 +30,10 @@ int main(int argc, char * argv[]) {
     assert(c5.repeated.size() == 1);
     ContinuedFrac c6(6);
     assert(c6.repeated.size() == 2);
+
+    int max_mobius = 10000;
+    Mobius m(max_mobius);
+    for (int i = 1; i < max_mobius; i++) {
+        assert(m.at(i) == slow_mobius(i));
+    }
 }

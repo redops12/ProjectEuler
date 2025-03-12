@@ -1,19 +1,21 @@
+#include "combinatorics.h"
 #include "strint.h"
 #include <iostream>
+#include <cassert>
 
 using namespace std;
 
 int main (int argc, char *argv[]) {
-    uint64_t grand_sum = 0;
-    for (int i = 2; i < 300000; i++) {
+    int grand_sum = 0;
+    for (int i = 3; i < 100000; i++) {
         int sum = 0;
         for (DigIterator<int> it(i); it != it.end(); ++it) {
-            sum += *it * *it * *it * *it * *it;
+            sum += static_cast<int>(factorial(*it));
         }
         if (sum == i) {
             grand_sum += i;
         }
     }
-    assert(grand_sum == 443839);
+    assert(grand_sum == 40730);
     return 0;
 }

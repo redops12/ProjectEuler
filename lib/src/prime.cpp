@@ -47,6 +47,7 @@ PrimeIterator PrimeIterator::operator+(int offset) {
 
 Factorized::Factorized(int num) {
     PrimeIterator it;
+    if (num == 0) return;
     while (num != 1) {
         if (num % *it == 0) {
             this->factors[*it]++;
@@ -69,6 +70,15 @@ int Factorized::num_divisors() {
 bool Factorized::is_square() {
     for (auto p : factors) {
         if (p.second % 2 != 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+bool Factorized::square_free() {
+    for (auto p : factors) {
+        if (p.second > 1) {
             return false;
         }
     }

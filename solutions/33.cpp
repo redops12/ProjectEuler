@@ -72,5 +72,6 @@ int main (int argc, char *argv[]) {
         }
     }
     cout << static_cast<string>(product) << endl;
+    assert(product == Frac(1,100));
     return 0;
 }

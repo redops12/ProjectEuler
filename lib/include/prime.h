@@ -18,6 +18,7 @@ public:
     std::map<int, int> factors;
     int num_divisors();
     bool is_square();
+    bool square_free();
     void power_of(int num);
 
     // this operator does not actually measure less

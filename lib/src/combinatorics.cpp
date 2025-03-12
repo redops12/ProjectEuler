@@ -1,8 +1,10 @@
 #include <combinatorics.h>
 #include <cassert>
 #include <vector>
+#include <boost/multiprecision/cpp_int.hpp>
 
 using namespace std;
+using namespace boost::multiprecision;
 
 vector<vector<uint64_t>> n_choose_r_lookup = {{1}};
 
@@ -26,4 +28,12 @@ uint64_t n_choose_r(uint64_t n, uint64_t r) {
 
 uint64_t catalan(uint64_t n) {
     return n_choose_r(2 * n, n) / n + 1;
+}
+
+boost::multiprecision::cpp_int factorial(int n) {
+    cpp_int ret = 1;
+    for (int i = 2; i <= n; i++) {
+        ret *= i;
+    }
+    return ret;
 }

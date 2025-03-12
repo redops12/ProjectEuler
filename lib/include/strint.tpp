@@ -19,6 +19,21 @@ bool DigIterator<T>::operator!=(const DigIterator<T>& other) const {
 }
 
 template<class T>
-bool DigIterator<T>::done() const {
-    return this->num == 0;
+bool DigIterator<T>::operator==(const DigIterator<T>& other) const {
+    return this->num == other.num;
+}
+
+template<class T>
+DigIterator<T> DigIterator<T>::end() {
+    return DigIterator(0);
+}
+
+template <class T>
+std::vector<int> get_digits(T x) {
+    std::vector<int> digits;
+    for (DigIterator<T> it(x); it != it.end(); ++it) {
+        digits.push_back(*it);
+    }
+    std::reverse(digits.begin(), digits.end());
+    return digits;
 }

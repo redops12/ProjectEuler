@@ -3,25 +3,10 @@
 #include <cassert>
 #include <boost/multiprecision/cpp_int.hpp>
 #include "number_theory.h"
+#include "prime.h"
 
 using namespace std;
 using namespace boost::multiprecision;
-
-template <class T>
-T gcd(T a, T b) {
-    a = abs(a);
-    b = abs(b);
-    if (a < b) {
-        swap(a, b);
-    }
-    while (true) {
-        if (b == 0)
-            return a;
-        T r = a % b;
-        a = b;
-        b = r;
-    }
-}
 
 RadicalRational::RadicalRational(int c) {
     this->a = 0;
@@ -108,4 +93,28 @@ std::pair<cpp_int, cpp_int> ContinuedFrac::convergent() {
         denom /= g;
     }
     return make_pair(num, denom);
+}
+
+Mobius::Mobius(uint64_t max) {
+    mobius_val.resize(max + 1, 1);
+    for (PrimeIterator it; *it < max; ++it) {
+        for (int i = 0; i < mobius_val.size(); i += *it) {
+            if (i < (1 << 30) / *it && i * *it < mobius_val.size()) {
+                mobius_val[i * *it] = 0;
+            }
+            mobius_val[i] *= -1;
+        }
+    }
+}
+
+int8_t Mobius::at(uint64_t idx) {
+    return mobius_val[idx];
+}
+
+int8_t slow_mobius(uint64_t x) {
+    Factorized f(x);
+    if (x == 0) return 0;
+    if (x == 1) return 1;
+    if (!f.square_free()) return 0;
+    return (f.factors.size() % 2) ? -1 : 1;
 }
