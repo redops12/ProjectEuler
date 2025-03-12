@@ -2,7 +2,7 @@
 #include "prime.h"
 #include "number_theory.h"
 
-int main(int argc, char * argv[]) {
+void factorized_tests() {
     Factorized f1(2);
     assert(!f1.is_square());
     assert(!fast_is_square(2));
@@ -15,7 +15,9 @@ int main(int argc, char * argv[]) {
     Factorized f4(36);
     assert(f4.is_square());
     assert(fast_is_square(36));
+}
 
+void ContinuedFrac_tests() {
     ContinuedFrac c23(23);
     assert(c23.initial == 4);
     assert(c23.repeated[0] == 1);
@@ -30,10 +32,19 @@ int main(int argc, char * argv[]) {
     assert(c5.repeated.size() == 1);
     ContinuedFrac c6(6);
     assert(c6.repeated.size() == 2);
+}
 
+void mobius_tests() {
     int max_mobius = 10000;
     Mobius m(max_mobius);
     for (int i = 1; i < max_mobius; i++) {
         assert(m.at(i) == slow_mobius(i));
     }
+}
+
+int main(int argc, char * argv[]) {
+    factorized_tests();
+    ContinuedFrac_tests();
+    mobius_tests();
+    palindrome_tests();
 }

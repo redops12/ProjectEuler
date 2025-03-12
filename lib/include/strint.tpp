@@ -1,15 +1,15 @@
 template<class T>
-DigIterator<T>::DigIterator(T num): num(num) {}
+DigIterator<T>::DigIterator(T num, int base): num(num), base(base) {}
 
 template<class T>
 int DigIterator<T>::operator*() const {
-    T modulo = num % 10;
+    T modulo = num % base;
     return modulo;
 }
 
 template<class T>
 DigIterator<T>& DigIterator<T>::operator++() {
-    num /= 10;
+    num /= base;
     return *this;
 }
 
@@ -29,9 +29,9 @@ DigIterator<T> DigIterator<T>::end() {
 }
 
 template <class T>
-std::vector<int> get_digits(T x) {
+std::vector<int> get_digits(T x, int base) {
     std::vector<int> digits;
-    for (DigIterator<T> it(x); it != it.end(); ++it) {
+    for (DigIterator<T> it(x, base); it != it.end(); ++it) {
         digits.push_back(*it);
     }
     std::reverse(digits.begin(), digits.end());
