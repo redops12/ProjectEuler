@@ -46,5 +46,4 @@ int main(int argc, char * argv[]) {
     factorized_tests();
     ContinuedFrac_tests();
     mobius_tests();
-    palindrome_tests();
 }

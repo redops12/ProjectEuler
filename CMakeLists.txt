@@ -101,6 +101,22 @@ add_executable( sol36 solutions/36.cpp )
 target_link_libraries( sol36 PRIVATE lib )
 add_test(NAME test36 COMMAND sol36)
 
+add_executable( sol37 solutions/37.cpp )
+target_link_libraries( sol37 PRIVATE lib )
+add_test(NAME test37 COMMAND sol37)
+
+add_executable( sol38 solutions/38.cpp )
+target_link_libraries( sol38 PRIVATE lib )
+add_test(NAME test38 COMMAND sol38)
+
+add_executable( sol39 solutions/39.cpp )
+
+add_executable( sol40 solutions/40.cpp )
+
+add_executable( sol41 solutions/41.cpp )
+target_link_libraries( sol41 PRIVATE lib )
+add_test(NAME test41 COMMAND sol41)
+
 add_executable( sol60 solutions/60.cpp )
 target_link_libraries( sol60 PRIVATE lib )
 add_test(NAME test60 COMMAND sol60)

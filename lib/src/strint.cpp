@@ -1,5 +1,6 @@
 #include <cstdint>
 #include <vector>
+#include <iterator>
 #include "strint.h"
 
 using namespace boost::multiprecision;
@@ -20,17 +21,7 @@ int log_10(uint64_t num) {
     return log;
 }
 
-uint64_t concat(const vector<int> &v) {
-    uint64_t num = 0;
-    for (int x : v) {
-        assert(x >= 0 && x < 10);
-        num *= 10;
-        num += x;
-    }
-    return num;
-}
-
-uint64_t concat(uint64_t l, uint64_t r) {
+uint64_t concat_num(uint64_t l, uint64_t r) {
     uint64_t mult = base_10(r);
     uint64_t ret = mult * l + r;
     return ret;
@@ -50,6 +41,16 @@ bool is_palindrome(const std::vector<int> &v) {
     auto rit = v.rbegin();
     for (auto it = v.begin(); it < v.begin() + v.size() / 2; ++it, ++rit) {
         if (*it != *rit) return false;
+    }
+    return true;
+}
+
+bool is_pandigital(const uint64_t x, int n) {
+    if (x < 123456789 || x > 987654321) return false;
+    vector<int> digits = get_digits(x);
+    if (digits.size() != n) return false;
+    for (int i = 0; i < n; i++) {
+        if (digits[i] != i+1) return false;
     }
     return true;
 }

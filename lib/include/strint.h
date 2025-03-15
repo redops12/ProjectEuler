@@ -3,11 +3,14 @@
 #include <vector>
 #include <iterator>
 
-uint64_t concat(uint64_t l, uint64_t r);
-uint64_t concat(const std::vector<int> &v);
+uint64_t concat_num(uint64_t l, uint64_t r);
+
+template <class IterType>
+uint64_t concat(const IterType &beg, const IterType &end);
 uint64_t base_10(uint64_t num);
 int log_10(uint64_t num);
 int sum_digits(boost::multiprecision::cpp_int x);
+bool is_pandigital(const uint64_t x, int n = 9);
 
 template <class T>
 std::vector<int> get_digits(T x, int base = 10);

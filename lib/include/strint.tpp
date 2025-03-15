@@ -37,3 +37,14 @@ std::vector<int> get_digits(T x, int base) {
     std::reverse(digits.begin(), digits.end());
     return digits;
 }
+
+template <class IterType>
+uint64_t concat(const IterType &beg, const IterType &end) {
+    uint64_t num = 0;
+    for (auto it = beg; it < end; ++it) {
+        assert(*it >= 0 && *it < 10);
+        num *= 10;
+        num += *it;
+    }
+    return num;
+}

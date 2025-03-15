@@ -13,7 +13,7 @@ int main (int argc, char *argv[]) {
         for (int i = 0; i < digits.size(); i++) {
             vector<int> rotations(digits.size());
             rotate_copy(digits.begin(), digits.begin() + i, digits.end(), rotations.begin());
-            uint64_t prime_check = concat(rotations);
+            uint64_t prime_check = concat(rotations.begin(), rotations.end());
             if (!is_prime(prime_check)) {
                 is_circular_prime = false;
                 break;
