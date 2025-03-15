@@ -117,6 +117,8 @@ add_executable( sol41 solutions/41.cpp )
 target_link_libraries( sol41 PRIVATE lib )
 add_test(NAME test41 COMMAND sol41)
 
+add_executable( sol42 solutions/42.cpp )
+
 add_executable( sol60 solutions/60.cpp )
 target_link_libraries( sol60 PRIVATE lib )
 add_test(NAME test60 COMMAND sol60)
