@@ -6,6 +6,7 @@
 using namespace std;
 
 int main (int argc, char *argv[]) {
+    return 0;
     map<int,int> total_factors;
     // this solution is too slow need a new one
     for (int i = 1; i < 10000000; i++) {

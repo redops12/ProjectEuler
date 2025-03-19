@@ -46,9 +46,9 @@ bool is_palindrome(const std::vector<int> &v) {
 }
 
 bool is_pandigital(const uint64_t x, int n) {
-    if (x < 123456789 || x > 987654321) return false;
     vector<int> digits = get_digits(x);
     if (digits.size() != n) return false;
+    sort(digits.begin(), digits.end());
     for (int i = 0; i < n; i++) {
         if (digits[i] != i+1) return false;
     }
