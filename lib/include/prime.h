@@ -10,6 +10,7 @@ public:
     PrimeIterator& operator++();
     bool operator!=(const PrimeIterator& other) const;
     PrimeIterator operator+(int offset);
+    static void extend(uint64_t upper_bound);
 };
 
 class Factorized {

@@ -1,0 +1,54 @@
+#include "prime.h"
+#include "strint.h"
+#include <iostream>
+#include <cassert>
+#include <set>
+
+using namespace std;
+
+int main (int argc, char *argv[]) {
+    for (PrimeIterator pit;;++pit) {
+        vector<int> digs = get_digits(*pit);
+        for (int i = 1; i < digs.size(); i++) {
+            vector<int> mask;
+            for (int j = 0; j < digs.size(); j++) {
+                if (j < i) mask.push_back(0);
+                else mask.push_back(1);
+            }
+            do {
+                bool bad_mask = false;
+                int dig = -1;
+                for (int j = 0; j < digs.size(); j++) {
+                    if (mask[j] == 0) continue;
+                    if (dig == -1) {
+                        if (dig > 2) {
+                            bad_mask = true;
+                            break;
+                        }
+                        dig = digs[j];
+                    }
+                    else if (digs[j] != dig) {
+                        bad_mask = true;
+                        break;
+                    }
+                }
+                if (bad_mask) continue;
+                uint64_t inc = concat(mask.begin(), mask.end());
+                uint64_t test_prime = *pit - inc * ((mask.front() == 1) ? dig - 1 : dig);
+                int count = 0;
+                for (int i = 0; i < 10; i++){
+                    if (is_prime(test_prime)) {
+                        count++;
+                    }
+                    test_prime += inc;
+                }
+                if (count >= 8) {
+                    assert(*pit == 121313);
+                    return 0;
+                }
+            } while (next_permutation(mask.begin(), mask.end()));
+        }
+    }
+
+    return 0;
+}

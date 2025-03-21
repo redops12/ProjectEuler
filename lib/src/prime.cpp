@@ -1,6 +1,7 @@
 #include <vector>
 #include "prime.h"
 #include <algorithm>
+#include <boost/dynamic_bitset.hpp>
 
 using std::vector;
 using std::binary_search;
