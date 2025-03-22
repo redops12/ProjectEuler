@@ -1149,9 +1149,7 @@ int main (int argc, char *argv[]) {
         Hand rhs;
         stringstream ss(s);
         ss >> lhs >> rhs;
-        bool bigger = lhs > rhs;
-        cout << lhs << (bigger ? '>' : '<') << ' ' << rhs << endl;
-        if (bigger) {
+        if (lhs > rhs) {
             count++;
         }
     }

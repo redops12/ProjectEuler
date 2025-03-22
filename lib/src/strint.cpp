@@ -12,15 +12,6 @@ uint64_t base_10(uint64_t num) {
     return base;
 }
 
-int log_10(uint64_t num) {
-    uint64_t base;
-    int log = 0;
-    for (base = 10; base < num; base *= 10) {
-        log++;
-    }
-    return log;
-}
-
 uint64_t concat_num(uint64_t l, uint64_t r) {
     uint64_t mult = base_10(r);
     uint64_t ret = mult * l + r;

@@ -7,8 +7,15 @@ uint64_t concat_num(uint64_t l, uint64_t r);
 
 template <class IterType>
 uint64_t concat(const IterType &beg, const IterType &end);
+
+template <class IterType>
+boost::multiprecision::cpp_int concat_big(const IterType &beg, const IterType &end);
+
 uint64_t base_10(uint64_t num);
-int log_10(uint64_t num);
+
+template <class T>
+int log_10(T num);
+
 int sum_digits(boost::multiprecision::cpp_int x);
 bool is_pandigital(const uint64_t x, int n = 9);
 

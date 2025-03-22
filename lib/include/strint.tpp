@@ -4,7 +4,7 @@ DigIterator<T>::DigIterator(T num, int base): num(num), base(base) {}
 template<class T>
 int DigIterator<T>::operator*() const {
     T modulo = num % base;
-    return modulo;
+    return static_cast<int>(modulo);
 }
 
 template<class T>
@@ -48,3 +48,25 @@ uint64_t concat(const IterType &beg, const IterType &end) {
     }
     return num;
 }
+
+template <class IterType>
+boost::multiprecision::cpp_int concat_big(const IterType &beg, const IterType &end) {
+    boost::multiprecision::cpp_int num = 0;
+    for (auto it = beg; it < end; ++it) {
+        assert(*it >= 0 && *it < 10);
+        num *= 10;
+        num += *it;
+    }
+    return num;
+}
+
+template <class T>
+int log_10(T num) {
+    T base;
+    int log = 0;
+    for (base = 10; base < num; base *= 10) {
+        log++;
+    }
+    return log;
+}
+
