@@ -1,5 +1,7 @@
 #include <iostream>
 #include <array>
+#include <map>
+#include <cassert>
 
 using namespace std;
 int arr[50][9][9] = {
@@ -554,9 +556,24 @@ int arr[50][9][9] = {
         {0, 0, 0, 0, 0, 8, 0, 0, 6},
     }};
 
+static const array<pair<int,int>, 9> offsets = {make_pair(0,0), make_pair(0,1), make_pair(0,2), make_pair(1,0), make_pair(1,1), make_pair(1,2), make_pair(2,0), make_pair(2,1), make_pair(2,2)};
+static const array<pair<int,int>, 9> upper_left = {make_pair(0,0), make_pair(0,3), make_pair(0,6), make_pair(3,0), make_pair(3,3), make_pair(3,6), make_pair(6,0), make_pair(6,3), make_pair(6,6)};
 class Grid {
 public:
     array<array<int, 9>, 9> sudoku;
+    void valid() {
+        for (int i = 0; i < 9; i++) {
+            map<int, int> seen;
+            for (int j = 0; j < 9; j++) {
+                seen[sudoku[i][j]]++;
+                seen[sudoku[j][i]]++;
+                seen[sudoku[upper_left[i].first + offsets[j].first][upper_left[i].second + offsets[j].second]]++;
+            }
+            for (auto p : seen) {
+                assert(p.second == 3);
+            }
+        }
+    }
 
     bool solve() {
         int i, j;
@@ -576,7 +593,6 @@ public:
         int top_left_i = i - i % 3;
         int top_left_j = j - j % 3;
         for (size_t k = 0; k < 9; k++) {
-            static array<pair<int,int>, 9> offsets = {make_pair(0,0), make_pair(0,1), make_pair(0,2), make_pair(1,0), make_pair(1,1), make_pair(1,2), make_pair(2,0), make_pair(2,1), make_pair(2,2)};
             bool bad = false;
             for (int m = 0; m < 9; m++) {
                 if (
@@ -613,7 +629,8 @@ int main (int argc, char *argv[]) {
             }
         }
         g.solve();
-        sum += g.sudoku[0][0] * 100 + g.sudoku[0][1] * 10 + g.sudoku[0][2];
+        sum += g.sudoku[0][0] * 100 + g.sudoku[0][1] * 10 + g.sudoku[0][2] + 111;
+        g.valid();
     }
     cout << sum << endl;
 
