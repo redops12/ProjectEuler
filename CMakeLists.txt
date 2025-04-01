@@ -205,6 +205,8 @@ add_test(NAME test66 COMMAND sol66)
 
 add_executable( sol67 solutions/67.cpp )
 
+add_executable( sol96 solutions/96.cpp )
+
 add_executable( sol99 solutions/99.cpp )
 
 add_executable( sol193 solutions/193.cpp )
