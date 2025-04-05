@@ -1,8 +1,10 @@
 
 template <class T>
 T gcd(T a, T b) {
-    a = abs(a);
-    b = abs(b);
+    if constexpr (std::is_signed<T>::value) {
+        a = std::abs(a);
+        b = std::abs(b);
+    }
     if (a < b) {
         std::swap(a, b);
     }

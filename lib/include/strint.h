@@ -25,6 +25,9 @@ std::vector<int> get_digits(T x, int base = 10);
 bool is_palindrome(const std::vector<int> &v);
 
 template <class T>
+bool is_perm(T lhs, T rhs);
+
+template <class T>
 class DigIterator {
 private:
     T num;

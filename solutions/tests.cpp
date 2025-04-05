@@ -42,8 +42,17 @@ void mobius_tests() {
     }
 }
 
+void totient_tests() {
+    int max_totient = 5000;
+    Totient t(max_totient);
+    for (int i = 1; i < max_totient; i++) {
+        assert(t.at(i) == slow_totient(i));
+    }
+}
+
 int main(int argc, char * argv[]) {
     factorized_tests();
     ContinuedFrac_tests();
     mobius_tests();
+    totient_tests();
 }

@@ -118,3 +118,31 @@ int8_t slow_mobius(uint64_t x) {
     if (!f.square_free()) return 0;
     return (f.factors.size() % 2) ? -1 : 1;
 }
+
+Totient::Totient(uint64_t max) {
+    totient_val.resize(max + 1);
+    totient_val[0] = 1;
+    for (uint64_t i = 1; i < max; i++) {
+        totient_val[i] = i;
+    }
+    for (PrimeIterator it; *it < max; ++it) {
+        for (int i = *it; i < totient_val.size(); i += *it) {
+            totient_val[i] -= totient_val[i] / *it;
+        }
+    }
+}
+
+uint64_t Totient::at(uint64_t idx) {
+    return totient_val[idx];
+}
+
+uint64_t slow_totient(uint64_t x) {
+    if (x == 0 || x == 1) return 1;
+    uint64_t count = 0;
+    for (uint64_t i = 1; i < x; i++) {
+        if (gcd(i, x) == 1) {
+            count++;
+        }
+    }
+    return count;
+}

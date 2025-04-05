@@ -53,7 +53,10 @@ template <class IterType>
 boost::multiprecision::cpp_int concat_big(const IterType &beg, const IterType &end) {
     boost::multiprecision::cpp_int num = 0;
     for (auto it = beg; it < end; ++it) {
-        assert(*it >= 0 && *it < 10);
+        assert(*it >= 0);
+        if (*it >= 10) {
+            num *= 10;
+        }
         num *= 10;
         num += *it;
     }
@@ -70,3 +73,19 @@ int log_10(T num) {
     return log;
 }
 
+template <class T>
+bool is_perm(T lhs, T rhs) {
+    std::array<int, 10> counts = {};
+    for (DigIterator<T> it(lhs); it != it.end(); ++it) {
+        counts[*it]++;
+    }
+    for (DigIterator<T> it(rhs); it != it.end(); ++it) {
+        counts[*it]--;
+    }
+    for (int i = 0; i < 10; i++) {
+        if (counts[i] != 0) {
+            return false;
+        }
+    }
+    return true;
+}

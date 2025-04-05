@@ -1,5 +1,9 @@
 # Solutions
 add_executable( sol7 solutions/7.cpp )
+target_include_directories( sol7 PUBLIC
+    "${PROJECT_BINARY_DIR}"
+    "${PROJECT_SOURCE_DIR}/lib/include"
+)
 target_link_libraries( sol7 PRIVATE lib )
 add_test(NAME test7 COMMAND sol7)
 
@@ -184,7 +188,19 @@ add_test(NAME test66 COMMAND sol66)
 
 add_executable( sol67 solutions/67.cpp )
 
+add_executable( sol68 solutions/68.cpp )
+target_link_libraries( sol68 PRIVATE lib )
+add_test(NAME test68 COMMAND sol68)
+
+add_executable( sol70 solutions/70.cpp )
+target_link_libraries( sol70 PRIVATE lib )
+add_test(NAME test70 COMMAND sol70)
+
 add_executable( sol71 solutions/71.cpp )
+
+add_executable( sol72 solutions/72.cpp )
+target_link_libraries( sol72 PRIVATE lib )
+add_test(NAME test72 COMMAND sol72)
 
 add_executable( sol76 solutions/76.cpp )
 

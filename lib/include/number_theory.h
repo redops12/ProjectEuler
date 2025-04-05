@@ -74,5 +74,15 @@ public:
 
 int8_t slow_mobius(uint64_t x);
 
+class Totient {
+    uint64_t max;
+    std::vector<uint64_t> totient_val;
+public:
+    Totient(uint64_t max);
+    uint64_t at(uint64_t idx);
+};
+
+uint64_t slow_totient(uint64_t x);
+
 // include template definitions
 #include "number_theory.tpp"
