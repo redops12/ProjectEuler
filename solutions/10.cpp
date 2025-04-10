@@ -6,7 +6,7 @@
 using namespace std;
 
 int main (int argc, char *argv[]) {
-    PrimeIterator it;
+    PrimeIterator it(2000000);
     uint64_t num = 0;
     while (*it < 2000000) {
         num += *it;

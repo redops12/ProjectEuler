@@ -8,8 +8,29 @@ using std::binary_search;
 using std::copy;
 
 static vector<int> known_primes = {2};
+static vector<int> sieve;
 
 PrimeIterator::PrimeIterator():idx(0) {}
+
+PrimeIterator::PrimeIterator(uint64_t max_prime):idx(0) {
+    if (max_prime + 1 > sieve.size()) {
+        sieve.resize(max_prime + 1, 0);
+    }
+    for (auto p : known_primes) {
+        for (uint64_t i = p; i <= max_prime; i += p) {
+            sieve[i] = 1;
+        }
+    }
+    uint64_t temp_idx = known_primes.back();
+
+    while (temp_idx <= max_prime) {
+        while (sieve[++temp_idx]) {}
+        for (uint64_t i = temp_idx; i <= max_prime; i += temp_idx) {
+            sieve[i] = 1;
+        }
+        known_primes.push_back(temp_idx);
+    }
+}
 
 int PrimeIterator::operator*() const {
     return known_primes[idx];

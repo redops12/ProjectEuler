@@ -66,10 +66,10 @@ class ContinuedFrac {
 
 class Mobius {
     uint64_t max;
-    std::vector<int8_t> mobius_val;
+    std::vector<int> mobius_val;
 public:
     Mobius(uint64_t max);
-    int8_t at(uint64_t idx);
+    int at(uint64_t idx);
 };
 
 int8_t slow_mobius(uint64_t x);

@@ -6,6 +6,7 @@ private:
     size_t idx;
 public:
     PrimeIterator();
+    PrimeIterator(uint64_t max);
     int operator*() const;
     PrimeIterator& operator++();
     bool operator!=(const PrimeIterator& other) const;

@@ -2,6 +2,23 @@
 #include "prime.h"
 #include "number_theory.h"
 
+void primes_tests() {
+    PrimeIterator pit(10000);
+    for (int i = 2; i < 10000; i++) {
+        bool prime = true;
+        for (int j = 2; j * j <= i; j++) {
+            if (i % j == 0) {
+                prime = false;
+                break;
+            }
+        }
+        if (prime) {
+            assert(*pit == i);
+            ++pit;
+        }
+    }
+}
+
 void factorized_tests() {
     Factorized f1(2);
     assert(!f1.is_square());
@@ -51,6 +68,7 @@ void totient_tests() {
 }
 
 int main(int argc, char * argv[]) {
+    primes_tests();
     factorized_tests();
     ContinuedFrac_tests();
     mobius_tests();
