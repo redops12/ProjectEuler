@@ -1,6 +1,7 @@
 #include <vector>
 #include <string>
 #include <iostream>
+#include "macros.h"
 
 using namespace std;
 
@@ -59,6 +60,9 @@ void print_char(int i) {
 }
 
 int main(int argc, char * argv[]) {
+    UNUSED(argc);
+    UNUSED(argv);
+
     for (int i = 0; i <= 1000; i++) {
         print_char(i);
     }

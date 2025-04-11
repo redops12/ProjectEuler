@@ -2,10 +2,14 @@
 #include <cassert>
 #include <cstdint>
 #include <set>
+#include "macros.h"
 
 using namespace std;
 
 int main (int argc, char *argv[]) {
+    UNUSED(argc);
+    UNUSED(argv);
+
     uint64_t t_idx = 285;
     uint64_t p_idx = 165;
     uint64_t h_idx = 143;

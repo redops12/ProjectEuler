@@ -3,10 +3,14 @@
 #include <cassert>
 #include <cstdint>
 #include <map>
+#include "macros.h"
 
 using namespace std;
 
 int main (int argc, char *argv[]) {
+    UNUSED(argc);
+    UNUSED(argv);
+
     // pair represents the first and the count
     map<uint64_t, pair<uint64_t,int>> cube_count;
     uint64_t max = 1000000000000000000;
@@ -15,7 +19,7 @@ int main (int argc, char *argv[]) {
         if (cube > max) {
             break;
         }
-        vector<int> digs = get_digits(cube);
+        vector<unsigned int> digs = get_digits(cube);
         sort(digs.begin(), digs.end(), greater<int>());
         uint64_t conc = concat(digs.begin(), digs.end());
         auto it = cube_count.find(conc);

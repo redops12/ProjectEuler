@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cassert>
 #include <vector>
+#include "macros.h"
 
 using namespace std;
 
@@ -88,6 +89,9 @@ vector<vector<int>> arr = {
 };
 
 int main (int argc, char *argv[]) {
+    UNUSED(argc);
+    UNUSED(argv);
+
     int N = 80;
     vector<vector<int>> v(N, vector<int>(N));
     for (size_t i = 0; i < N; i++) {

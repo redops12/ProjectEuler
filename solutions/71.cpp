@@ -1,9 +1,13 @@
 #include <iostream>
 #include <cassert>
+#include "macros.h"
 
 using namespace std;
 
 int main (int argc, char *argv[]) {
+    UNUSED(argc);
+    UNUSED(argv);
+
     pair<int,int> max_frac = make_pair(2,5);
     int n = 2;
     int d = 5;

@@ -3,6 +3,7 @@
 #include <array>
 #include <vector>
 #include <boost/multiprecision/cpp_int.hpp>
+#include "macros.h"
 
 using namespace std;
 using namespace boost::multiprecision;
@@ -1011,6 +1012,9 @@ vector<array<int, 2>> arr {
 };
 
 int main (int argc, char *argv[]) {
+    UNUSED(argc);
+    UNUSED(argv);
+
     double biggest = 0;
     int biggest_line;
     for (size_t i = 0; i < arr.size(); i++) {

@@ -2,11 +2,15 @@
 #include <iostream>
 #include <cassert>
 #include <boost/multiprecision/cpp_int.hpp>
+#include "macros.h"
 
 using namespace std;
 using namespace boost::multiprecision;
 
 int main (int argc, char *argv[]) {
+    UNUSED(argc);
+    UNUSED(argv);
+
     int max_dig_sum = 0;
     for (cpp_int i = 1; i < 100; i++) {
         for (int j = 1; j < 100; j++) {

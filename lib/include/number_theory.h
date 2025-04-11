@@ -75,11 +75,11 @@ public:
 int8_t slow_mobius(uint64_t x);
 
 class Totient {
-    uint64_t max;
+    unsigned int max;
     std::vector<uint64_t> totient_val;
 public:
-    Totient(uint64_t max);
-    uint64_t at(uint64_t idx);
+    Totient(unsigned int max);
+    unsigned int at(unsigned int idx);
 };
 
 uint64_t slow_totient(uint64_t x);

@@ -1,6 +1,7 @@
 #include <vector>
 #include <iostream>
 #include <boost/range/algorithm.hpp>
+#include "macros.h"
 
 using namespace std;
 
@@ -108,6 +109,9 @@ vector<vector<int>> tri = {
 };
 
 int main(int argc, char * argv[]) {
+    UNUSED(argc);
+    UNUSED(argv);
+
     for (int i = 1; i < tri.size(); i++) {
         for (int j = 0; j < tri[i].size(); j++) {
             if (j == 0) {

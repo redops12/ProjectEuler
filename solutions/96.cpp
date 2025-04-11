@@ -2,6 +2,7 @@
 #include <array>
 #include <map>
 #include <cassert>
+#include "macros.h"
 
 using namespace std;
 int arr[50][9][9] = {
@@ -620,6 +621,9 @@ private:
 };
 
 int main (int argc, char *argv[]) {
+    UNUSED(argc);
+    UNUSED(argv);
+
     Grid g;
     int sum = 0;
     for (int gid = 0; gid < 50; gid++) {

@@ -7,7 +7,7 @@ using std::vector;
 using std::binary_search;
 using std::copy;
 
-static vector<int> known_primes = {2};
+static vector<unsigned int> known_primes = {2};
 static vector<int> sieve;
 
 PrimeIterator::PrimeIterator():idx(0) {}
@@ -32,7 +32,7 @@ PrimeIterator::PrimeIterator(uint64_t max_prime):idx(0) {
     }
 }
 
-int PrimeIterator::operator*() const {
+unsigned int PrimeIterator::operator*() const {
     return known_primes[idx];
 }
 
@@ -130,23 +130,23 @@ void Factorized::power_of(int num) {
     }
 }
 
-bool is_prime(int64_t num) {
-    if (num < 0) num = num * -1;
-    if (num == 0 || num == 1) return false;
-    if (num < known_primes.back()) {
-        return binary_search(known_primes.begin(), known_primes.end(), num);
+bool is_prime(int num) {
+    unsigned int unsigned_num = (num < 0) ? num * -1 : num;
+    if (unsigned_num == 0 || unsigned_num == 1) return false;
+    if (unsigned_num < known_primes.back()) {
+        return binary_search(known_primes.begin(), known_primes.end(), unsigned_num);
     }
-    if (static_cast<uint64_t>(known_primes.back()) * known_primes.back() < num) {
+    if (static_cast<uint64_t>(known_primes.back()) * known_primes.back() < unsigned_num) {
         PrimeIterator p;
-        while ((*p) * (*p) < num) {
+        while ((*p) * (*p) < unsigned_num) {
             ++p;
         }
     }
     for (auto p : known_primes) {
-        if (p * p > num) {
+        if (p * p > unsigned_num) {
             break;
         }
-        if (num % p == 0) {
+        if (unsigned_num % p == 0) {
             return false;
             break;
         }
@@ -156,7 +156,7 @@ bool is_prime(int64_t num) {
 
 bool fast_is_square(uint64_t num) {
     PrimeIterator it;
-    while ((*it) * (*it) <= num) {
+    while (static_cast<uint64_t>(*it) * (*it) <= num) {
         if (num % *it == 0) {
             num /= *it;
             if (num % *it != 0) {

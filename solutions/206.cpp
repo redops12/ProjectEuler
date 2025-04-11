@@ -1,9 +1,13 @@
 #include <cstdint>
 #include <iostream>
+#include "macros.h"
 
 using namespace std;
 
 int main(int argc, char * argv[]) {
+    UNUSED(argc);
+    UNUSED(argv);
+
     for (uint64_t x = 1010101010; ;x+=10) {
         uint64_t sq = x * x;
         if (

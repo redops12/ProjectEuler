@@ -6,6 +6,7 @@
 #include <sstream>
 #include <vector>
 #include <cstdint>
+#include "macros.h"
 
 using namespace std;
 
@@ -1143,6 +1144,9 @@ class Hand {
 };
 
 int main (int argc, char *argv[]) {
+    UNUSED(argc);
+    UNUSED(argv);
+
     int count = 0;
     for (auto s : input) {
         Hand lhs;

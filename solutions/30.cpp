@@ -1,9 +1,13 @@
 #include "strint.h"
 #include <iostream>
+#include "macros.h"
 
 using namespace std;
 
 int main (int argc, char *argv[]) {
+    UNUSED(argc);
+    UNUSED(argv);
+
     uint64_t grand_sum = 0;
     for (int i = 2; i < 300000; i++) {
         int sum = 0;

@@ -3,14 +3,18 @@
 #include <iostream>
 #include <cassert>
 #include <set>
+#include "macros.h"
 
 using namespace std;
 
 int main (int argc, char *argv[]) {
+    UNUSED(argc);
+    UNUSED(argv);
+
     PrimeIterator pit;
     while (*pit < 1000) {++pit;}
     for (;*pit < 10000; ++pit) {
-        vector<int> digs = get_digits(*pit);
+        vector<unsigned int> digs = get_digits(*pit);
         set<int> difference;
         while (next_permutation(digs.begin(), digs.end())) {
             uint64_t new_p = concat(digs.begin(), digs.end());

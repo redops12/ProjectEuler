@@ -1,5 +1,6 @@
 #include <vector>
 #include <iostream>
+#include "macros.h"
 
 using namespace std;
 
@@ -27,6 +28,9 @@ vector<vector<int>> arr= {
 };
 
 int main(int argc, char * argv[]) {
+    UNUSED(argc);
+    UNUSED(argv);
+
     int max_num = 0;
     for (size_t i = 0; i < arr.size(); i++) {
         for (size_t j = 0; j < arr[i].size() - 4; j++) {

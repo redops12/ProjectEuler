@@ -3,14 +3,18 @@
 #include <cassert>
 #include <boost/multiprecision/cpp_int.hpp>
 #include <vector>
+#include "macros.h"
 
 using namespace std;
 using namespace boost::multiprecision;
 
 int main (int argc, char *argv[]) {
+    UNUSED(argc);
+    UNUSED(argv);
+
     int count = 0;
     for (size_t i = 0; i < 10000; i++) {
-        vector<int> digs = get_digits(i);
+        vector<unsigned int> digs = get_digits(i);
         bool lychrel = true;
         for (size_t j = 0; j < 50; j++) {
             cpp_int sum = concat_big(digs.begin(), digs.end()) + concat_big(digs.rbegin(), digs.rend());

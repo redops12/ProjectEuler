@@ -98,7 +98,7 @@ std::pair<cpp_int, cpp_int> ContinuedFrac::convergent() {
 Mobius::Mobius(uint64_t max) {
     mobius_val.resize(max + 1, 1);
     for (PrimeIterator it(max); *it < max; ++it) {
-        for (int i = 0; i < mobius_val.size(); i += *it) {
+        for (unsigned int i = 0; i < mobius_val.size(); i += *it) {
             if (i < (1 << 30) / *it && i * *it < mobius_val.size()) {
                 mobius_val[i * *it] = 0;
             }
@@ -119,20 +119,20 @@ int8_t slow_mobius(uint64_t x) {
     return (f.factors.size() % 2) ? -1 : 1;
 }
 
-Totient::Totient(uint64_t max) {
+Totient::Totient(unsigned int max) {
     totient_val.resize(max + 1);
     totient_val[0] = 1;
     for (uint64_t i = 1; i < max; i++) {
         totient_val[i] = i;
     }
     for (PrimeIterator it(max); *it < max; ++it) {
-        for (int i = *it; i < totient_val.size(); i += *it) {
+        for (size_t i = *it; i < totient_val.size(); i += *it) {
             totient_val[i] -= totient_val[i] / *it;
         }
     }
 }
 
-uint64_t Totient::at(uint64_t idx) {
+unsigned int Totient::at(unsigned int idx) {
     return totient_val[idx];
 }
 

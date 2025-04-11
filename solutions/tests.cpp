@@ -1,12 +1,13 @@
 #include <cassert>
 #include "prime.h"
 #include "number_theory.h"
+#include "macros.h"
 
 void primes_tests() {
     PrimeIterator pit(10000);
-    for (int i = 2; i < 10000; i++) {
+    for (unsigned int i = 2; i < 10000; i++) {
         bool prime = true;
-        for (int j = 2; j * j <= i; j++) {
+        for (unsigned int j = 2; j * j <= i; j++) {
             if (i % j == 0) {
                 prime = false;
                 break;
@@ -68,6 +69,9 @@ void totient_tests() {
 }
 
 int main(int argc, char * argv[]) {
+    UNUSED(argc);
+    UNUSED(argv);
+
     primes_tests();
     factorized_tests();
     ContinuedFrac_tests();

@@ -2,17 +2,21 @@
 #include "prime.h"
 #include <iostream>
 #include <cassert>
+#include "macros.h"
 
 using namespace std;
 
 int main (int argc, char *argv[]) {
+    UNUSED(argc);
+    UNUSED(argv);
+
     PrimeIterator pit;
     int sum = 0;
     while (*pit < 10) ++pit; // skip single digits
     for (int num_found = 0; num_found < 11; ++pit) {
-        vector<int> digs = get_digits(*pit);
+        vector<unsigned int> digs = get_digits(*pit);
         bool truncatable = true;
-        for (int i = 1; i < digs.size(); i++) {
+        for (size_t i = 1; i < digs.size(); i++) {
             if (!is_prime(concat(digs.begin() + i, digs.end())) ||
                 !is_prime(concat(digs.begin(), digs.end() - i)))
             {

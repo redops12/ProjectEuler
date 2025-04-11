@@ -4,14 +4,18 @@
 #include <vector>
 #include <cstdint>
 #include <bitset>
+#include "macros.h"
 
 using namespace std;
 
 int main (int argc, char *argv[]) {
+    UNUSED(argc);
+    UNUSED(argv);
+
     uint64_t sum = 0;
     for (int i = 1; i < 1000000; i++) {
-        vector<int> base10 = get_digits(i, 10);
-        vector<int> base2 = get_digits(i, 2);
+        vector<unsigned int> base10 = get_digits(i, 10);
+        vector<unsigned int> base2 = get_digits(i, 2);
         if (is_palindrome(base10) && is_palindrome(base2)) {
             sum += i;
         }

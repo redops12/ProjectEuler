@@ -7,7 +7,7 @@ private:
 public:
     PrimeIterator();
     PrimeIterator(uint64_t max);
-    int operator*() const;
+    unsigned int operator*() const;
     PrimeIterator& operator++();
     bool operator!=(const PrimeIterator& other) const;
     PrimeIterator operator+(int offset);

@@ -3,12 +3,16 @@
 #include <iostream>
 #include <cassert>
 #include <set>
+#include "macros.h"
 
 using namespace std;
 
 int main (int argc, char *argv[]) {
+    UNUSED(argc);
+    UNUSED(argv);
+
     for (PrimeIterator pit;;++pit) {
-        vector<int> digs = get_digits(*pit);
+        vector<unsigned int> digs = get_digits(*pit);
         for (int i = 1; i < digs.size(); i++) {
             vector<int> mask;
             for (int j = 0; j < digs.size(); j++) {

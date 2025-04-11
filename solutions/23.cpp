@@ -1,9 +1,13 @@
 #include <set>
 #include <iostream>
+#include "macros.h"
 
 using namespace std;
 
 int main(int argc, char * argv[]) {
+    UNUSED(argc);
+    UNUSED(argv);
+
     set<int> abundant_nums;
     for (int i = 0; i <= 28123; i++) {
         int divisor_sum = 0;

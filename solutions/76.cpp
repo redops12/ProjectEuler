@@ -2,10 +2,14 @@
 #include <cassert>
 #include <array>
 #include <cstdint>
+#include "macros.h"
 
 using namespace std;
 
 int main (int argc, char *argv[]) {
+    UNUSED(argc);
+    UNUSED(argv);
+
     array<uint64_t, 101> p = {};
     p[0] = 1;
     for (int i = 1; i < 101; i++) {

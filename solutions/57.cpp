@@ -2,10 +2,14 @@
 #include "strint.h"
 #include <iostream>
 #include <cassert>
+#include "macros.h"
 
 using namespace std;
 
 int main (int argc, char *argv[]) {
+    UNUSED(argc);
+    UNUSED(argv);
+
     vector<int> terms;
     terms.push_back(1);
     int count = 0;

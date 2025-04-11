@@ -9,7 +9,7 @@ using namespace boost::multiprecision;
 vector<vector<uint64_t>> n_choose_r_lookup = {{1}};
 
 uint64_t n_choose_r(uint64_t n, uint64_t r) {
-    if (n < 0 || r < 0 || n < r) assert(0);
+    if (n < r) assert(0);
 
     while (n_choose_r_lookup.size() <= n) {
         const vector<uint64_t> &last = n_choose_r_lookup.back();

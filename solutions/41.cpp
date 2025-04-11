@@ -3,11 +3,14 @@
 #include <iostream>
 #include <cassert>
 #include <deque>
+#include "macros.h"
 
 using namespace std;
 
 int main (int argc, char *argv[]) {
-    int largest = 0;
+    UNUSED(argc);
+    UNUSED(argv);
+
     deque<int> num = {9,8,7,6,5,4,3,2,1};
     do {
         do {

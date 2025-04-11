@@ -1,10 +1,14 @@
 #include "prime.h"
 #include <iostream>
 #include <cassert>
+#include "macros.h"
 
 using namespace std;
 
 int main (int argc, char *argv[]) {
+    UNUSED(argc);
+    UNUSED(argv);
+
     int upper_bound = 547;
     int temp_upper_bound = 547;
     while (true) {

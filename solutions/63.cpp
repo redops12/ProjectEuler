@@ -3,11 +3,15 @@
 #include <cassert>
 #include <set>
 #include <boost/multiprecision/cpp_int.hpp>
+#include "macros.h"
 
 using namespace std;
 using namespace boost::multiprecision;
 
 int main (int argc, char *argv[]) {
+    UNUSED(argc);
+    UNUSED(argv);
+
     set<cpp_int> uniq = {};
     for (cpp_int i = 1; i < 10; i++) {
         cpp_int base = i;

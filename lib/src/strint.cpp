@@ -36,11 +36,11 @@ bool is_palindrome(const std::vector<int> &v) {
     return true;
 }
 
-bool is_pandigital(const uint64_t x, int n) {
-    vector<int> digits = get_digits(x);
+bool is_pandigital(const uint64_t x, size_t n) {
+    vector<unsigned int> digits = get_digits(x);
     if (digits.size() != n) return false;
     sort(digits.begin(), digits.end());
-    for (int i = 0; i < n; i++) {
+    for (unsigned int i = 0; i < n; i++) {
         if (digits[i] != i+1) return false;
     }
     return true;

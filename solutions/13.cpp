@@ -1,6 +1,7 @@
 #include "boost/multiprecision/cpp_int.hpp"
 #include <vector>
 #include <iostream>
+#include "macros.h"
 
 using namespace boost::multiprecision;
 using namespace std;
@@ -109,6 +110,9 @@ vector<cpp_int> nums = {
 };
 
 int main(int argc, char * argv[]) {
+    UNUSED(argc);
+    UNUSED(argv);
+
     cpp_int num;
     for (cpp_int n : nums) {
         num += n;

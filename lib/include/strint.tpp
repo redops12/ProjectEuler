@@ -29,8 +29,8 @@ DigIterator<T> DigIterator<T>::end() {
 }
 
 template <class T>
-std::vector<int> get_digits(T x, int base) {
-    std::vector<int> digits;
+std::vector<unsigned int> get_digits(T x, int base) {
+    std::vector<unsigned int> digits;
     for (DigIterator<T> it(x, base); it != it.end(); ++it) {
         digits.push_back(*it);
     }

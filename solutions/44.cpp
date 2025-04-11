@@ -2,12 +2,16 @@
 #include <cassert>
 #include <cstdint>
 #include <set>
+#include "macros.h"
 
 using namespace std;
 
 int main (int argc, char *argv[]) {
+    UNUSED(argc);
+    UNUSED(argv);
+
     set<uint64_t> pengtagonal_nums = {1};
-    int stopping_point = 2500;
+    size_t stopping_point = 2500;
     for (size_t n = 2; n < stopping_point; n++) {
         uint64_t next = *pengtagonal_nums.rbegin() + 3 * n - 2;
         pengtagonal_nums.insert(next);

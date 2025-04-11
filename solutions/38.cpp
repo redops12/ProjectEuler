@@ -3,10 +3,14 @@
 #include <iostream>
 #include <cassert>
 #include <algorithm>
+#include "macros.h"
 
 using namespace std;
 
 int main (int argc, char *argv[]) {
+    UNUSED(argc);
+    UNUSED(argv);
+
     uint64_t max_ret = 0;
     for (int n = 2; n < 6; n++) {
         int max_val = pow(10, 10 / n + 1);

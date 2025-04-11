@@ -7,10 +7,14 @@
 #include <cassert>
 #include "prime.h"
 #include "strint.h"
+#include "macros.h"
 
 using namespace std;
 
 int main (int argc, char *argv[]) {
+    UNUSED(argc);
+    UNUSED(argv);
+
     map<int, vector<int>> nonsense;
     for (PrimeIterator it1; *it1 < 10000; ++it1) {
         for (PrimeIterator it2 = it1 + 1; *it2 < 10000; ++it2) {

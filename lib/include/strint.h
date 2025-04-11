@@ -17,10 +17,10 @@ template <class T>
 int log_10(T num);
 
 int sum_digits(boost::multiprecision::cpp_int x);
-bool is_pandigital(const uint64_t x, int n = 9);
+bool is_pandigital(const uint64_t x, unsigned int n = 9);
 
 template <class T>
-std::vector<int> get_digits(T x, int base = 10);
+std::vector<unsigned int> get_digits(T x, int base = 10);
 
 bool is_palindrome(const std::vector<int> &v);
 

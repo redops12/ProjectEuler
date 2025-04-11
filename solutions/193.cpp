@@ -5,10 +5,14 @@
 #include <cmath>
 #include <array>
 #include <cstring>
+#include "macros.h"
 
 using namespace std;
 
 int main (int argc, char *argv[]) {
+    UNUSED(argc);
+    UNUSED(argv);
+
     int64_t n = static_cast<uint64_t>(1) << 50;
     int64_t upper = static_cast<int64_t>(sqrt(n));
     const uint32_t max_d = upper + 1;
