@@ -3,6 +3,7 @@
 #include <iostream>
 #include <cassert>
 #include <set>
+#include <optional>
 #include "macros.h"
 
 using namespace std;
@@ -13,18 +14,18 @@ int main (int argc, char *argv[]) {
 
     for (PrimeIterator pit;;++pit) {
         vector<unsigned int> digs = get_digits(*pit);
-        for (int i = 1; i < digs.size(); i++) {
+        for (size_t i = 1; i < digs.size(); i++) {
             vector<int> mask;
-            for (int j = 0; j < digs.size(); j++) {
+            for (size_t j = 0; j < digs.size(); j++) {
                 if (j < i) mask.push_back(0);
                 else mask.push_back(1);
             }
             do {
                 bool bad_mask = false;
-                int dig = -1;
-                for (int j = 0; j < digs.size(); j++) {
+                optional<unsigned int> dig;
+                for (size_t j = 0; j < digs.size(); j++) {
                     if (mask[j] == 0) continue;
-                    if (dig == -1) {
+                    if (dig) {
                         if (dig > 2) {
                             bad_mask = true;
                             break;
@@ -38,7 +39,7 @@ int main (int argc, char *argv[]) {
                 }
                 if (bad_mask) continue;
                 uint64_t inc = concat(mask.begin(), mask.end());
-                uint64_t test_prime = *pit - inc * ((mask.front() == 1) ? dig - 1 : dig);
+                uint64_t test_prime = *pit - inc * ((mask.front() == 1) ? *dig - 1 : *dig);
                 int count = 0;
                 for (int i = 0; i < 10; i++){
                     if (is_prime(test_prime)) {

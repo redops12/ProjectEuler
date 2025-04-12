@@ -16,14 +16,6 @@ RadicalRational::RadicalRational(int c) {
     this->d = 1;
 }
 
-RadicalRational::RadicalRational(const RadicalRational &copy) {
-    this->c = copy.c;
-    this->sqrt_c = copy.sqrt_c;
-    this->a = copy.a;
-    this->b = copy.b;
-    this->d = copy.d;
-}
-
 void RadicalRational::invert() {
     RadicalRational inv = *this;
     this->c = inv.c;

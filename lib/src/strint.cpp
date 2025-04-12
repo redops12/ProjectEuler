@@ -28,7 +28,7 @@ int sum_digits(boost::multiprecision::cpp_int x) {
     return sum;
 }
 
-bool is_palindrome(const std::vector<int> &v) {
+bool is_palindrome(const std::vector<unsigned int> &v) {
     auto rit = v.rbegin();
     for (auto it = v.begin(); it < v.begin() + v.size() / 2; ++it, ++rit) {
         if (*it != *rit) return false;

@@ -10,7 +10,6 @@ map<uint64_t, int> known_lengths;
 
 uint64_t chain_length(uint64_t x) {
     if (x == 1 || x == 0) return 1;
-    if (x < 0) abort();
     auto lookup = known_lengths.find(x);
     if (lookup != known_lengths.end()) {
         return lookup->second;

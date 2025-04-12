@@ -22,7 +22,7 @@ bool is_pandigital(const uint64_t x, unsigned int n = 9);
 template <class T>
 std::vector<unsigned int> get_digits(T x, int base = 10);
 
-bool is_palindrome(const std::vector<int> &v);
+bool is_palindrome(const std::vector<unsigned int> &v);
 
 template <class T>
 bool is_perm(T lhs, T rhs);

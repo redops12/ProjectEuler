@@ -15,7 +15,7 @@ int main (int argc, char *argv[]) {
     static const uint64_t MAX = 10000000;
     Totient tfn(MAX);
     vector<pair<uint64_t,uint64_t>> perms;
-    for (size_t i = 2; i < MAX; i++) {
+    for (unsigned int i = 2; i < MAX; i++) {
         if (is_perm(i, tfn.at(i))) {
             perms.push_back(make_pair(i, tfn.at(i)));
         }

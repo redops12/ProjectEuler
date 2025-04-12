@@ -18,7 +18,7 @@ int main (int argc, char *argv[]) {
     do {
         bool include = true;
         PrimeIterator pit;
-        for (int i = 1; i < digs.size() - 2; i++) {
+        for (size_t i = 1; i < digs.size() - 2; i++) {
             uint64_t num = concat(digs.begin() + i, digs.begin() + i + 3);
             if (num % *pit != 0) {
                 include = false;

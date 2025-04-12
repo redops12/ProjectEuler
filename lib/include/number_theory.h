@@ -44,7 +44,6 @@ class RadicalRational {
     // ---------------
     // a + b * sqrt(c)
     //
-    RadicalRational(const RadicalRational &copy);
     void invert();
     void reduce();
     float to_float();

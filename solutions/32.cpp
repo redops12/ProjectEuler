@@ -17,7 +17,7 @@ int main (int argc, char *argv[]) {
     do {
         if (expr[0] == '*' || expr[0] == '=' || expr.back() == '*' || expr.back() == '=') continue;
         bool bad_string = false;
-        for (int i = 0; i < expr.length() - 1; i++) {
+        for (size_t i = 0; i < expr.length() - 1; i++) {
             if (expr[i] == '*') {
                 if (expr[i+1] == '=') {
                     bad_string = true;
