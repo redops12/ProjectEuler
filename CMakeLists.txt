@@ -17,4 +17,8 @@ add_executable( tests solutions/tests.cpp )
 target_link_libraries( tests PRIVATE lib )
 add_test(NAME tests COMMAND tests)
 
+add_executable( first_prime solutions/first_prime.cpp )
+target_link_libraries( first_prime  PRIVATE lib )
+add_test(NAME first_prime  COMMAND first_prime )
+
 include(solutions.cmake)

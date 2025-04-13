@@ -92,7 +92,7 @@ int main (int argc, char *argv[]) {
     UNUSED(argc);
     UNUSED(argv);
 
-    int N = 80;
+    size_t N = 80;
     vector<vector<int>> v(N, vector<int>(N));
     for (size_t i = 0; i < N; i++) {
         for (size_t j = 0; j < N; j++) {

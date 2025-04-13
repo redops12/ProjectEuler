@@ -25,7 +25,7 @@ int main (int argc, char *argv[]) {
                 optional<unsigned int> dig;
                 for (size_t j = 0; j < digs.size(); j++) {
                     if (mask[j] == 0) continue;
-                    if (dig) {
+                    if (!dig) {
                         if (dig > 2) {
                             bad_mask = true;
                             break;

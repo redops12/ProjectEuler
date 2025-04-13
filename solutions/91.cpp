@@ -11,7 +11,7 @@ int main (int argc, char *argv[]) {
     UNUSED(argv);
 
     int triangles = 0;
-    int N = 50 + 1;
+    size_t N = 50 + 1;
     for (size_t x1 = 0; x1 < N; x1++) {
         for (size_t y1 = 0; y1 < N; y1++) {
             for (size_t x2 = 0; x2 < N; x2++) {

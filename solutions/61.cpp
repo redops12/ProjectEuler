@@ -24,7 +24,7 @@ class Path {
     public:
     set<int> used;
     vector<int> path;
-    Path(vector<int> path, set<int> used): path(path), used(used) {}
+    Path(vector<int> path, set<int> used): used(used), path(path) {}
 };
 
 int main (int argc, char *argv[]) {

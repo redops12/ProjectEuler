@@ -593,7 +593,7 @@ public:
         if (!zero_space) return true;
         int top_left_i = i - i % 3;
         int top_left_j = j - j % 3;
-        for (size_t k = 0; k < 9; k++) {
+        for (int k = 0; k < 9; k++) {
             bool bad = false;
             for (int m = 0; m < 9; m++) {
                 if (

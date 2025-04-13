@@ -38,7 +38,7 @@ unsigned int PrimeIterator::operator*() const {
 
 PrimeIterator& PrimeIterator::operator++() {
     if (idx == known_primes.size() - 1) {
-        int num = known_primes[idx] + 1;
+        int64_t num = known_primes[idx] + 1;
         while (true)
         {
             if (is_prime(num)) {
@@ -130,8 +130,8 @@ void Factorized::power_of(int num) {
     }
 }
 
-bool is_prime(int num) {
-    unsigned int unsigned_num = (num < 0) ? num * -1 : num;
+bool is_prime(int64_t num) {
+    uint64_t unsigned_num = (num < 0) ? num * -1 : num;
     if (unsigned_num == 0 || unsigned_num == 1) return false;
     if (unsigned_num < known_primes.back()) {
         return binary_search(known_primes.begin(), known_primes.end(), unsigned_num);
