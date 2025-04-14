@@ -138,3 +138,21 @@ uint64_t slow_totient(uint64_t x) {
     }
     return count;
 }
+
+std::vector<unsigned int> get_coprime(unsigned int num) {
+    vector<unsigned int> coprimes;
+    vector<unsigned int> filter(num, 0);
+    for (PrimeIterator pit; *pit < num; ++pit) {
+        if (num % *pit == 0) {
+            for (size_t i = *pit; i < filter.size(); i += *pit) {
+                filter[i] = 1;
+            }
+        }
+    }
+    for (size_t i = 1; i < filter.size(); i++) {
+        if (filter[i] == 0) {
+            coprimes.push_back(i);
+        }
+    }
+    return coprimes;
+}

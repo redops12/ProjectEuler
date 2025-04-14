@@ -18,6 +18,8 @@ public:
     void reduce();
 };
 
+std::vector<unsigned int> get_coprime(unsigned int num);
+
 class RadicalRational {
     // Expression of form
     //
