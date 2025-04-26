@@ -85,5 +85,7 @@ public:
 
 uint64_t slow_totient(uint64_t x);
 
+boost::multiprecision::cpp_int partition(uint32_t n);
+
 // include template definitions
 #include "number_theory.tpp"
