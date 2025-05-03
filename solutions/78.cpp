@@ -9,7 +9,9 @@ int main (int argc, char *argv[]) {
     UNUSED(argc);
     UNUSED(argv);
 
-    assert(partition(100) - 1 == 190569291);
+    int i;
+    for (i = 1; partition(i) % 1000000 != 0; i++) {}
+    assert(i == 55374);
 
     return 0;
 }

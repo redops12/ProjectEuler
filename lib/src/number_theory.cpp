@@ -181,3 +181,21 @@ std::vector<unsigned int> get_coprime(unsigned int num) {
     }
     return coprimes;
 }
+
+static vector<cpp_int> part = {1};
+cpp_int partition(uint32_t n) {
+    for (int i = part.size(); static_cast<uint32_t>(i) <= n; i++) {
+        int mult = 1;
+        part.push_back(0);
+        for (int k = 1; i - (k * ( 3 * k - 1) / 2) >= 0; k++) {
+            if (i - (k * ( 3 * k - 1) / 2) >= 0) {
+                part[i] += mult * part[i - (k * ( 3 * k - 1) / 2)];
+            }
+            if (i - (k * ( 3 * k + 1) / 2) >= 0) {
+                part[i] += mult * part[i - (k * ( 3 * k + 1) / 2)];
+            }
+            mult *= -1;
+        }
+    }
+    return part.back();
+}
