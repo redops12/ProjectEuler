@@ -5,6 +5,15 @@
 template <class T>
 T gcd(T a, T b);
 
+class ExtendedEuclidean{
+    public:
+    // ax + by = g
+    int64_t g;
+    int64_t x;
+    int64_t y;
+    ExtendedEuclidean(int64_t a, int64_t b);
+};
+
 template <class T>
 class Frac {
 private:

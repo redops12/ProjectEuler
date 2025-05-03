@@ -8,6 +8,31 @@
 using namespace std;
 using namespace boost::multiprecision;
 
+ExtendedEuclidean::ExtendedEuclidean(int64_t a, int64_t b) {
+    int64_t s = 0;
+    int64_t old_s = 1;
+    int64_t t = 1;
+    int64_t old_t = 0;
+    int64_t r = b;
+    int64_t old_r = a;
+    while (r != 0) {
+        int64_t div = old_r / r;
+        int64_t temp = old_r - div * r;
+        old_r = r;
+        r = temp;
+        temp = old_s - div * s;
+        old_s = s;
+        s = temp;
+        temp = old_t - div * t;
+        old_t = t;
+        t = temp;
+    }
+    g = old_r;
+    x = old_s;
+    y = old_t;
+    assert(a * x + b * y == g);
+}
+
 RadicalRational::RadicalRational(int c) {
     this->a = 0;
     this->b = 1;

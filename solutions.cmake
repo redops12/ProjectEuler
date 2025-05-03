@@ -226,6 +226,10 @@ add_executable( sol80 solutions/80.cpp )
 target_link_libraries( sol80 PRIVATE lib )
 add_test(NAME test80 COMMAND sol80)
 
+add_executable( sol77 solutions/77.cpp )
+target_link_libraries( sol77 PRIVATE lib )
+add_test(NAME test77 COMMAND sol77)
+
 add_executable( sol81 solutions/81.cpp )
 
 add_executable( sol82 solutions/82.cpp )
@@ -269,6 +273,10 @@ add_executable( sol206 solutions/206.cpp )
 add_executable( sol216 solutions/216.cpp )
 target_link_libraries( sol216 PRIVATE lib )
 add_test(NAME test216 COMMAND sol216)
+
+add_executable( sol700 solutions/700.cpp )
+target_link_libraries( sol700 PRIVATE lib )
+add_test(NAME test700 COMMAND sol700)
 
 add_executable( sol926 solutions/926.cpp )
 target_link_libraries( sol926 PRIVATE lib )
