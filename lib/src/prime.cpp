@@ -7,7 +7,7 @@ using std::vector;
 using std::binary_search;
 using std::copy;
 
-static vector<unsigned int> known_primes = {2};
+static vector<uint64_t> known_primes = {2};
 static vector<int> sieve;
 
 PrimeIterator::PrimeIterator():idx(0) {}
@@ -31,7 +31,7 @@ PrimeIterator::PrimeIterator(uint64_t max_prime):idx(0) {
     }
 }
 
-unsigned int PrimeIterator::operator*() const {
+uint64_t PrimeIterator::operator*() const {
     return known_primes[idx];
 }
 
