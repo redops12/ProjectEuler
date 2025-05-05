@@ -14,6 +14,8 @@ class ExtendedEuclidean{
     ExtendedEuclidean(int64_t a, int64_t b);
 };
 
+uint64_t inverse_mod_p(uint64_t n, uint64_t p);
+
 template <class T>
 class Frac {
 private:

@@ -33,6 +33,11 @@ ExtendedEuclidean::ExtendedEuclidean(int64_t a, int64_t b) {
     assert(a * x + b * y == g);
 }
 
+uint64_t inverse_mod_p(uint64_t n, uint64_t p) {
+    ExtendedEuclidean ex(n, p);
+    return (ex.x + p) % p;
+}
+
 RadicalRational::RadicalRational(int c) {
     this->a = 0;
     this->b = 1;
