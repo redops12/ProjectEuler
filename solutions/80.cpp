@@ -6,7 +6,9 @@
 #include "macros.h"
 
 using namespace std;
-using namespace boost::multiprecision;
+using big_int = boost::multiprecision::number<
+    boost::multiprecision::cpp_int_backend<>,
+    boost::multiprecision::et_off>;
 
 int main (int argc, char *argv[]) {
     UNUSED(argc);
@@ -17,12 +19,12 @@ int main (int argc, char *argv[]) {
         if (fast_is_square(i)) {
             continue;
         }
-        cpp_int num = 10;
+        big_int num = 10;
         num = i * pow(num, 198);
-        cpp_int lb = 0;
-        cpp_int ub = num;
+        big_int lb = 0;
+        big_int ub = num;
         while (lb + 1 < ub) {
-            cpp_int mp = (lb + ub) / 2;
+            big_int mp = (lb + ub) / 2;
             if (mp * mp > num) {
                 ub = mp;
             }
@@ -35,7 +37,7 @@ int main (int argc, char *argv[]) {
             total += *dit;
         }
     }
-    cout << total << endl;
+    assert(total == 40886);
 
     return 0;
 }

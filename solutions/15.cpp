@@ -11,9 +11,9 @@ int main(int argc, char * argv[]) {
     UNUSED(argc);
     UNUSED(argv);
 
-    cpp_int test = 1;
+    __uint128_t test = 1;
     for (int i = 0; i < 50; i++) {
-        cpp_int sum = 0;
+        __uint128_t sum = 0;
         for (int j = 0; j <= i; j++) {
             sum += n_choose_r(i, j);
         }

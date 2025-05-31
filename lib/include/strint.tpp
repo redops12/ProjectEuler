@@ -64,7 +64,7 @@ boost::multiprecision::cpp_int concat_big(const IterType &beg, const IterType &e
 }
 
 template <class T>
-int log_10(T num) {
+unsigned int log_10(T num) {
     T base;
     int log = 0;
     for (base = 10; base < num; base *= 10) {

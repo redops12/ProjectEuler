@@ -1,3 +1,4 @@
+#pragma once
 #include <cstdint>
 #include <boost/multiprecision/cpp_int.hpp>
 #include <vector>
@@ -14,7 +15,7 @@ boost::multiprecision::cpp_int concat_big(const IterType &beg, const IterType &e
 uint64_t base_10(uint64_t num);
 
 template <class T>
-int log_10(T num);
+unsigned int log_10(T num);
 
 int sum_digits(boost::multiprecision::cpp_int x);
 bool is_pandigital(const uint64_t x, unsigned int n = 9);

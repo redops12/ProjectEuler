@@ -1016,7 +1016,7 @@ int main (int argc, char *argv[]) {
     UNUSED(argv);
 
     double biggest = 0;
-    int biggest_line;
+    int biggest_line = 0;
     for (size_t i = 0; i < arr.size(); i++) {
         double power = log(arr[i][0]) * arr[i][1];
         if (power > biggest) {

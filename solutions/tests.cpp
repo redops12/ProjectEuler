@@ -1,7 +1,38 @@
+#include "combinatorics.h"
 #include <cassert>
 #include "prime.h"
 #include "number_theory.h"
 #include "macros.h"
+#include <boost/multiprecision/cpp_int.hpp>
+
+using big_int = boost::multiprecision::number<
+    boost::multiprecision::cpp_int_backend<>,
+    boost::multiprecision::et_off>;
+
+void n_choose_r_tests() {
+    __uint128_t test = 1;
+    for (int i = 0; i < 50; i++) {
+        __uint128_t sum = 0;
+        for (int j = 0; j <= i; j++) {
+            sum += n_choose_r(i, j);
+        }
+        assert(sum == test);
+        test *= 2;
+    }
+}
+
+void is_square_tests() {
+    assert(fast_is_square(4));
+    assert(!fast_is_square(5));
+    assert(fast_is_square(16384));
+    assert(fast_is_square(100));
+    assert(!fast_is_square(99));
+    assert(!fast_is_square(63));
+    assert(!fast_is_square(65));
+    auto str = std::string("100000000000000");
+    big_int x = big_int(str);
+    assert(fast_is_square(x));
+}
 
 void primes_tests() {
     PrimeIterator pit(10000);
@@ -18,6 +49,7 @@ void primes_tests() {
             ++pit;
         }
     }
+    assert(is_prime(100000007) == true);
 }
 
 void factorized_tests() {
@@ -68,13 +100,29 @@ void totient_tests() {
     }
 }
 
+void factorization_iterator_tests() {
+    std::vector<std::vector<unsigned int>> sols = {
+        {12},
+        {3, 4},
+        {2, 6},
+        {2, 2, 3}
+    };
+    size_t i = 0;
+    for (FactorizationIterator fit(12); !fit.end(); ++fit, ++i) {
+        assert(*fit == sols[i]);
+    }
+}
+
 int main(int argc, char * argv[]) {
     UNUSED(argc);
     UNUSED(argv);
 
+    n_choose_r_tests();
+    is_square_tests();
     primes_tests();
     factorized_tests();
     ContinuedFrac_tests();
     mobius_tests();
     totient_tests();
+    factorization_iterator_tests();
 }

@@ -9,7 +9,7 @@ int main (int argc, char *argv[]) {
     UNUSED(argc);
     UNUSED(argv);
 
-    int max_n = 0, max_a, max_b;
+    int max_n = 0, max_a = 0, max_b = 0;
     for (int a = -999; a < 1000; a++) {
         for (int b = -1000; b <= 1000; b++) {
             int n;
