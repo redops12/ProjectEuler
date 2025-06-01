@@ -1,0 +1,6 @@
+// turns out that this is as simple as finding integer solutions to the equation
+// x^2 - 2xy - y^2 - x + y = 0
+// Wolfram alpha can solve these and gives a closed form for solutions
+// y = \frac{\left(\left(3+2\sqrt{2}\right)^{n}-\left(3-2\sqrt{2}\right)^{n}\right)}{(4\sqrt{2})}
+// use n = 16 which is big enough and then solve for x to get
+// x = 756872327473
