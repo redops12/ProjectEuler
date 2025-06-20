@@ -24,8 +24,13 @@ private:
     T denom;
 public:
     Frac(T num, T denom);
+    Frac(T num);
     bool operator==(const Frac& other) const;
+    bool operator<(const Frac& other) const;
     Frac<T> operator*(const Frac& rhs) const;
+    Frac<T> operator+(const Frac& rhs) const;
+    Frac<T> operator-(const Frac& rhs) const;
+    Frac<T> operator/(const Frac& rhs) const;
     operator std::string() const;
     void reduce();
 };

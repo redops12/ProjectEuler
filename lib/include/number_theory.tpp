@@ -21,13 +21,42 @@ template <class T>
 Frac<T>::Frac(T num, T denom): num(num), denom(denom) {}
 
 template <class T>
+Frac<T>::Frac(T num): num(num), denom(1) {}
+
+template <class T>
 bool Frac<T>::operator==(const Frac& other) const {
     return this->num * other.denom == this->denom * other.num;
 }
 
 template <class T>
+bool Frac<T>::operator<(const Frac& other) const {
+    return this->num * other.denom < this->denom * other.num;
+}
+
+template <class T>
 Frac<T> Frac<T>::operator*(const Frac& rhs) const {
     auto f = Frac<T>(this->num * rhs.num, this->denom * rhs.denom);
+    f.reduce();
+    return f;
+}
+
+template <class T>
+Frac<T> Frac<T>::operator/(const Frac& rhs) const {
+    auto f = Frac<T>(this->num * rhs.denom, this->denom * rhs.num);
+    f.reduce();
+    return f;
+}
+
+template <class T>
+Frac<T> Frac<T>::operator+(const Frac& rhs) const {
+    auto f = Frac<T>(this->num * rhs.denom + rhs.num * this->denom, this->denom * rhs.denom);
+    f.reduce();
+    return f;
+}
+
+template <class T>
+Frac<T> Frac<T>::operator-(const Frac& rhs) const {
+    auto f = Frac<T>(this->num * rhs.denom - rhs.num * this->denom, this->denom * rhs.denom);
     f.reduce();
     return f;
 }

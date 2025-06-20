@@ -9,6 +9,7 @@ set(SRC_FILES
     ${CMAKE_CURRENT_SOURCE_DIR}/src/combinatorics.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/number_theory.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/graph.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/roman_numeral.cpp
 )
 
 add_library (lib ${SRC_FILES})
