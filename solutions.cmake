@@ -272,6 +272,10 @@ add_executable( sol93 solutions/93.cpp )
 target_link_libraries( sol93 PRIVATE lib )
 add_test(NAME test93 COMMAND sol93)
 
+add_executable( sol94 solutions/94.cpp )
+target_link_libraries( sol94 PRIVATE lib )
+add_test(NAME test94 COMMAND sol94)
+
 add_executable( sol96 solutions/96.cpp )
 
 add_executable( sol97 solutions/97.cpp )
