@@ -102,6 +102,23 @@ public:
 
 uint64_t slow_totient(uint64_t x);
 
+class GeneralizedPentagonal {
+    int prev;
+    public:
+    GeneralizedPentagonal();
+    GeneralizedPentagonal& operator++();
+    unsigned int operator*() const;
+};
+
+class DivisorSum {
+    private:
+    std::vector<unsigned int> lookup;
+    public:
+    DivisorSum(unsigned int max);
+    unsigned int at(unsigned int val);
+    unsigned int at_proper(unsigned int val);
+};
+
 boost::multiprecision::cpp_int partition(uint32_t n);
 
 // include template definitions

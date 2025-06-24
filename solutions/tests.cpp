@@ -9,6 +9,17 @@ using big_int = boost::multiprecision::number<
     boost::multiprecision::cpp_int_backend<>,
     boost::multiprecision::et_off>;
 
+void general_pent_tests() {
+    GeneralizedPentagonal git;
+    assert(*git == 1);
+    ++git;
+    assert(*git == 2);
+    ++git;
+    assert(*git == 5);
+    ++git;
+    assert(*git == 7);
+}
+
 void n_choose_r_tests() {
     __uint128_t test = 1;
     for (int i = 0; i < 50; i++) {
@@ -117,6 +128,7 @@ int main(int argc, char * argv[]) {
     UNUSED(argc);
     UNUSED(argv);
 
+    general_pent_tests();
     n_choose_r_tests();
     is_square_tests();
     primes_tests();
