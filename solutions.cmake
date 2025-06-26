@@ -284,6 +284,8 @@ add_executable( sol96 solutions/96.cpp )
 
 add_executable( sol97 solutions/97.cpp )
 
+add_executable( sol98 solutions/98.cpp )
+
 add_executable( sol99 solutions/99.cpp )
 
 add_executable( sol193 solutions/193.cpp )
