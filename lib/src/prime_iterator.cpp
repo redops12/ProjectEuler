@@ -19,7 +19,9 @@ PrimeIterator::PrimeIterator(uint64_t max_prime):idx(0) {
     }
     uint64_t temp_idx = known_primes.back();
 
-    while (temp_idx <= max_prime && sieve[++temp_idx]) {
+    while (true) {
+        while (temp_idx <= max_prime && sieve[++temp_idx]) {}
+        if (temp_idx > max_prime) break;
         for (uint64_t i = temp_idx; i <= max_prime; i += temp_idx) {
             sieve[i] = 1;
         }

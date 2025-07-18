@@ -105,9 +105,20 @@ uint64_t slow_totient(uint64_t x);
 class GeneralizedPentagonal {
     int prev;
     public:
-    GeneralizedPentagonal();
-    GeneralizedPentagonal& operator++();
-    unsigned int operator*() const;
+    inline GeneralizedPentagonal(): prev(1) {}
+    inline GeneralizedPentagonal& operator++() {
+        if (prev > 0) {
+            prev *= -1;
+        } else {
+            prev *= -1;
+            prev += 1;
+        }
+        return *this;
+    }
+
+    inline unsigned int operator*() const {
+        return (3 * this->prev * this->prev - this->prev) / 2;
+    }
 };
 
 class DivisorSum {

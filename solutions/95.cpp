@@ -46,7 +46,8 @@ int main (int argc, char *argv[]) {
             curr = new_val;
         }
     }
-    cout << max_path << " " << global_min << endl;
+
+    assert(global_min == 14316);
 
     return 0;
 }

@@ -3,10 +3,43 @@
 #include <vector>
 #include <string>
 #include <map>
+#include <unordered_map>
 #include <algorithm>
 #include "macros.h"
 
 using namespace std;
+
+bool is_equivalent_anagram(const string &num1, const string &num2, const string &str1, const string &str2) {
+    if (num1.length() != str1.length()) {
+        return false;
+    }
+
+    unordered_map<char, char> m;
+    unordered_map<char, char> r;
+    for (size_t i = 0; i < str1.size(); i++) {
+        auto it = m.find(str1[i]);
+        if (it == m.end()) {
+            m[str1[i]] = num1[i];
+            auto rit = r.find(num1[i]);
+            if (rit != r.end() && rit->second != str1[i]) {
+                return false;
+            }
+            r[num1[i]] = str1[i];
+        } else {
+            if (it->second != num1[i]) {
+                return false;
+            }
+        }
+    }
+
+    for (size_t i = 0; i < str2.size(); i++) {
+        if (m[str2[i]] != num2[i]) {
+            return false;
+        }
+    }
+
+    return true;
+}
 
 int main (int argc, char *argv[]) {
     UNUSED(argc);
@@ -30,37 +63,30 @@ int main (int argc, char *argv[]) {
         }
     }
 
-    for (auto &p : sorted) {
-        cout << p.first << " ";
-        for (auto w : p.second) {
-            cout << w << " ";
-        }
-        cout << endl;
-    }
-
-    map<string, vector<unsigned int>> sorted_nums;
-    for (unsigned int i = 1; i * i < 1000000000; i++) {
+    map<string, vector<string>> sorted_nums;
+    for (unsigned long int i = 1; i * i < 10000000000; i++) {
         unsigned int sq = i * i;
         string s = to_string(sq);
         sort(s.begin(), s.end());
-        sorted_nums[s].push_back(sq);
+        sorted_nums[s].push_back(to_string(sq));
     }
 
-    for (auto it = sorted_nums.begin(); it != sorted_nums.end(); ) {
-        if (it->second.size() < 2 || it->first.size() == 8) {
-            it = sorted_nums.erase(it);
-        } else {
-            it++;
+    long unsigned int max_num = 0;
+    for (auto it = sorted_nums.begin(); it != sorted_nums.end(); ++it) {
+        for (size_t i = 0; i < it->second.size(); i++) {
+            for (size_t j = i + 1; j < it->second.size(); j++) {
+                for (auto &p : sorted) {
+                    if (is_equivalent_anagram(it->second[i], it->second[j], p.second[0], p.second[1]) || is_equivalent_anagram(it->second[i], it->second[j], p.second[0], p.second[1])) {
+                        unsigned long int l1 = stol(it->second[i]);
+                        unsigned long int l2 = stol(it->second[j]);
+                        max_num = max(max(l1, l2), max_num);
+                    }
+                }
+            }
         }
     }
 
-    for (auto &p : sorted_nums) {
-        cout << p.first << " ";
-        for (auto w : p.second) {
-            cout << w << " ";
-        }
-        cout << endl;
-    }
+    cout << max_num << endl;
 
     return 0;
 }

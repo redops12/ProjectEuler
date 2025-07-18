@@ -5,7 +5,7 @@ DivisorSum::DivisorSum(unsigned int max) {
     if (max == 0) {
         return;
     }
-    this->lookup.reserve(max);
+    this->lookup.resize(max);
 
     lookup[0] = 1;
     for (size_t n = 1; n <= max; n++) {
