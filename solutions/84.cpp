@@ -2,14 +2,10 @@
 #include <cassert>
 #include <array>
 #include <random>
-#include "macros.h"
 
 using namespace std;
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
-
+int main() {
     static const unsigned int GO = 0;
     static const unsigned int JAIL = 10;
 

@@ -5,7 +5,6 @@
 #include <set>
 #include <functional>
 #include <algorithm>
-#include "macros.h"
 
 using namespace std;
 
@@ -27,10 +26,7 @@ class Path {
     Path(vector<int> path, set<int> used): used(used), path(path) {}
 };
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
-
+int main() {
     // % 100 -> list[seq_idx, number]
     map<int,vector<pair<int, int>>> genned_map;
     // putting oct up front to cut down on recursions faster

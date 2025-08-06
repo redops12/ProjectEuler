@@ -2,13 +2,10 @@
 #include "prime.h"
 #include <iostream>
 #include <cassert>
-#include "macros.h"
 
 using namespace std;
 
-int main(int argc, char * argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
+int main() {
 
     int count = 0;;
     for (int i = 1; i < 10000; i++) {

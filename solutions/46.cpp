@@ -1,14 +1,10 @@
 #include "prime.h"
 #include <iostream>
 #include <cassert>
-#include "macros.h"
 
 using namespace std;
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
-
+int main() {
     for (size_t i = 33; true; i+=2) {
         if (is_prime(i)) continue;
         bool counter_example = true;

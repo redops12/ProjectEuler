@@ -1,16 +1,12 @@
 #include <boost/multiprecision/cpp_int.hpp>
 #include <iostream>
-#include "macros.h"
 
 using namespace std;
 using big_int = boost::multiprecision::number<
     boost::multiprecision::cpp_int_backend<>,
     boost::multiprecision::et_off>;
 
-int main(int argc, char * argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
-
+int main() {
     big_int num1 = 1;
     big_int num2 = 1;
     int idx = 2;

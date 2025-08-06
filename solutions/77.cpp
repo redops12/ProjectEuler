@@ -4,13 +4,10 @@
 #include <iostream>
 #include <cstdint>
 #include <cassert>
-#include "macros.h"
 
 using namespace std;
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
+int main() {
 
     // Sum x Number of coins
     vector<vector<uint64_t>> number_of_ways(1, vector<uint64_t>(1, 1));

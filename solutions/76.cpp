@@ -1,13 +1,10 @@
 #include "number_theory.h"
 #include <iostream>
 #include <cassert>
-#include "macros.h"
 
 using namespace std;
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
+int main() {
 
     assert(partition(100) - 1 == 190569291);
 

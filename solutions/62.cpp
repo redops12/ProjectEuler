@@ -3,13 +3,10 @@
 #include <cassert>
 #include <cstdint>
 #include <map>
-#include "macros.h"
 
 using namespace std;
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
+int main() {
 
     // pair represents the first and the count
     map<uint64_t, pair<uint64_t,int>> cube_count;

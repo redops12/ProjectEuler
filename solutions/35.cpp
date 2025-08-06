@@ -3,13 +3,9 @@
 #include <algorithm>
 #include <iostream>
 #include <cassert>
-#include "macros.h"
 
 using namespace std;
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
-
+int main() {
     int total = 0;
     for (PrimeIterator pit; *pit < 1000000; ++pit) {
         vector<unsigned int> digits = get_digits(*pit);

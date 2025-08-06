@@ -3,14 +3,10 @@
 #include <iostream>
 #include <cassert>
 #include <set>
-#include "macros.h"
 
 using namespace std;
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
-
+int main() {
     PrimeIterator pit;
     while (*pit < 1000) {++pit;}
     for (;*pit < 10000; ++pit) {

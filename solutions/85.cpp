@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cassert>
 #include <vector>
-#include "macros.h"
 
 using namespace std;
 
@@ -9,10 +8,7 @@ inline unsigned int tri(unsigned int n) {
     return n * (n + 1) / 2;
 }
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
-
+int main() {
     unsigned int max_n = 0;
     for (max_n = 1; tri(max_n) < 2000000; max_n++) {}
 

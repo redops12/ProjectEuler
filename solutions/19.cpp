@@ -1,13 +1,9 @@
 #include <vector>
 #include <iostream>
-#include "macros.h"
 
 using namespace std;
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
-
+int main() {
     int sundays = 0;
     // refers to jan 1 1900
     int day_count = 0;

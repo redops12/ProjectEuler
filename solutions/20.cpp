@@ -1,15 +1,11 @@
 #include "strint.h"
 #include <iostream>
-#include "macros.h"
 
 using namespace boost::multiprecision;
 using namespace std;
 
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
-
+int main() {
     cpp_int fac = 1;
     for (int i = 2; i <= 100; i++) {
         fac *= i;

@@ -2,14 +2,11 @@
 #include "number_theory.h"
 #include <boost/multiprecision/cpp_int.hpp>
 #include <cassert>
-#include "macros.h"
 
 using namespace boost::multiprecision;
 using namespace std;
 
-int main(int argc, char * argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
+int main() {
 
     vector<int> terms;
     terms.push_back(2);

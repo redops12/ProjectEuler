@@ -3,13 +3,10 @@
 #include <cassert>
 #include <set>
 #include <optional>
-#include "macros.h"
 
 using namespace std;
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
+int main() {
 
     const unsigned int MAX = 1000000;
     DivisorSum lookup(MAX);

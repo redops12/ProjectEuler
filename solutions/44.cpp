@@ -2,14 +2,10 @@
 #include <cassert>
 #include <cstdint>
 #include <set>
-#include "macros.h"
 
 using namespace std;
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
-
+int main() {
     set<uint64_t> pengtagonal_nums = {1};
     size_t stopping_point = 2500;
     for (size_t n = 2; n < stopping_point; n++) {

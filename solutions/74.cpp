@@ -2,13 +2,10 @@
 #include <iostream>
 #include <cassert>
 #include <unordered_map>
-#include "macros.h"
 
 using namespace std;
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
+int main() {
 
     static const int MAX_BOUND = 1000000;
     static const array<int,10> factorial = {1,1,2,6,24,120,720,5040,40320,362880};

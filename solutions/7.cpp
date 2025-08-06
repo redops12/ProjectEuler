@@ -1,7 +1,6 @@
 #include "prime.h"
 #include <iostream>
 #include <cassert>
-#include "macros.h"
 
 using namespace std;
 
@@ -14,10 +13,7 @@ int generate_prime(int idx) {
 
 }
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
-
+int main() {
     assert(generate_prime(0) == 2);
     assert(generate_prime(1) == 3);
     assert(generate_prime(2) == 5);

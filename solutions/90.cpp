@@ -3,14 +3,10 @@
 #include <vector>
 #include <algorithm>
 #include <set>
-#include "macros.h"
 
 using namespace std;
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
-
+int main() {
     vector<int> bitmask1(4, 0);
     bitmask1.resize(10, 1);
     unsigned int count = 0;

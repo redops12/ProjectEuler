@@ -1,14 +1,10 @@
 #include "number_theory.h"
 #include <iostream>
 #include <string>
-#include "macros.h"
 
 using namespace std;
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
-
+int main() {
     Frac<int> product(1,1);
     // check for numbers ij/ki
     for (int i = 1; i <= 9; i++) {

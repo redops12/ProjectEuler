@@ -1,12 +1,8 @@
 #include <iostream>
-#include "macros.h"
 
 using namespace std;
 
-int main(int argc, char * argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
-
+int main() {
     int current = 1;
     int triangle = 1;
     int max_divisors = 0;

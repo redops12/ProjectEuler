@@ -2,14 +2,10 @@
 #include <iostream>
 #include <cassert>
 #include <cstdint>
-#include "macros.h"
 
 using namespace std;
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
-
+int main() {
     uint64_t total = 1;
     uint64_t prime = 0;
     uint64_t corner = 1;

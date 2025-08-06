@@ -2,13 +2,10 @@
 #include <cassert>
 #include "prime.h"
 #include "strint.h"
-#include "macros.h"
 
 using namespace std;
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
+int main() {
 
     uint64_t total = 0;
     for (int n = 3; 3 * n - 1 < 1000000000; n++) {

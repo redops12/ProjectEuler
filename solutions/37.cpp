@@ -2,14 +2,10 @@
 #include "prime.h"
 #include <iostream>
 #include <cassert>
-#include "macros.h"
 
 using namespace std;
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
-
+int main() {
     PrimeIterator pit;
     int sum = 0;
     while (*pit < 10) ++pit; // skip single digits

@@ -1,13 +1,9 @@
 #include <map>
 #include <iostream>
-#include "macros.h"
 
 using namespace std;
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
-
+int main() {
     map<int, int> sums;
     for (int i = 1; i < 10000; i++) {
         int sum = 0;

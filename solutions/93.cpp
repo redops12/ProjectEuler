@@ -5,14 +5,10 @@
 #include <set>
 #include <algorithm>
 #include <functional>
-#include "macros.h"
 
 using namespace std;
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
-
+int main() {
     enum ops {
         MULT = 0,
         DIV = 1,

@@ -3,7 +3,6 @@
 #include <cassert>
 #include <vector>
 #include <string>
-#include "macros.h"
 
 using namespace std;
 
@@ -1010,10 +1009,7 @@ vector<string> lines = {
     "XXXXVIIII",
 };
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
-
+int main() {
     unsigned int saved = 0;
     for (const string &line : lines) {
         string shorter = to_numeral(to_number(line));

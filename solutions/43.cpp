@@ -4,14 +4,10 @@
 #include <cassert>
 #include <vector>
 #include <algorithm>
-#include "macros.h"
 
 using namespace std;
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
-
+int main() {
     /* vector<int> digs = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}; */
     vector<int> digs = {1,4,0,6,3,5,7,2,8,9};
     uint64_t sum = 0;

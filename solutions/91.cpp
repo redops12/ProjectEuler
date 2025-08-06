@@ -1,15 +1,11 @@
 #include <iostream>
 #include <cassert>
 #include <eigen3/Eigen/Dense>
-#include "macros.h"
 
 using namespace std;
 using namespace Eigen;
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
-
+int main() {
     int triangles = 0;
     size_t N = 50 + 1;
     for (size_t x1 = 0; x1 < N; x1++) {

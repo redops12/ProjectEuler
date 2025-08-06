@@ -2,15 +2,11 @@
 #include <cassert>
 #include <cstdint>
 #include <boost/multiprecision/cpp_int.hpp>
-#include "macros.h"
 
 using namespace std;
 using namespace boost::multiprecision;
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
-
+int main() {
     cpp_int p = 10000000000;
     int mask = 7830457;
     int mult = 28433;

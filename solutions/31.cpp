@@ -2,14 +2,10 @@
 #include <vector>
 #include <iostream>
 #include <cstdint>
-#include "macros.h"
 
 using namespace std;
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
-
+int main() {
     // Sum x Number of coins
     vector<unsigned int> coins = {1, 2, 5, 10, 20, 50, 100, 200};
     vector<vector<uint64_t>> number_of_ways(coins.size() + 1, vector<uint64_t>(201, 0));

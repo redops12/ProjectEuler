@@ -104,20 +104,24 @@ uint64_t slow_totient(uint64_t x);
 
 class GeneralizedPentagonal {
     int prev;
+    bool parity;
+    unsigned int curr;
     public:
-    inline GeneralizedPentagonal(): prev(1) {}
+    inline GeneralizedPentagonal(): prev(1), parity(0), curr(1) {}
     inline GeneralizedPentagonal& operator++() {
-        if (prev > 0) {
-            prev *= -1;
+        if (parity) {
+            parity = false;
+            curr = (3 * this->prev * this->prev - this->prev) >> 1;
         } else {
-            prev *= -1;
-            prev += 1;
+            parity = true;
+            curr = (3 * this->prev * this->prev + this->prev) >> 1;
+            prev++;
         }
         return *this;
     }
 
     inline unsigned int operator*() const {
-        return (3 * this->prev * this->prev - this->prev) / 2;
+        return curr;
     }
 };
 

@@ -9,12 +9,27 @@ DivisorSum::DivisorSum(unsigned int max) {
 
     lookup[0] = 1;
     for (size_t n = 1; n <= max; n++) {
-        unsigned int count = 0;
-        int multiplier = -1;
         for (GeneralizedPentagonal git; *git <= n; ++git) {
-            if (count % 2 == 0) multiplier *= -1;
-            lookup[n] += multiplier * ((*git == n) ? n : lookup[n - *git]);
-            count++;
+            unsigned int n1,n2,n3;
+            n1 = ((*git == n) ? n : lookup[n - *git]);
+            ++git;
+            if (*git > n) {
+                lookup[n] += n1;
+                break;
+            }
+            n2 = ((*git == n) ? n : lookup[n - *git]);
+            ++git;
+            if (*git > n) {
+                lookup[n] += n1 + n2;
+                break;
+            }
+            n3 = ((*git == n) ? n : lookup[n - *git]);
+            ++git;
+            if (*git > n) {
+                lookup[n] += n1 + n2 - n3;
+                break;
+            }
+            lookup[n] += n1 + n2 - n3 - ((*git == n) ? n : lookup[n - *git]);
         }
     }
 }

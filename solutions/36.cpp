@@ -4,14 +4,10 @@
 #include <vector>
 #include <cstdint>
 #include <bitset>
-#include "macros.h"
 
 using namespace std;
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
-
+int main() {
     uint64_t sum = 0;
     for (int i = 1; i < 1000000; i++) {
         vector<unsigned int> base10 = get_digits(i, 10);

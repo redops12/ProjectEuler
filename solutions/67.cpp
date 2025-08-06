@@ -1,7 +1,6 @@
 #include <vector>
 #include <iostream>
 #include <boost/range/algorithm.hpp>
-#include "macros.h"
 
 using namespace std;
 
@@ -108,10 +107,7 @@ vector<vector<int>> tri = {
     {23, 33, 44, 81, 80, 92, 93, 75, 94, 88, 23, 61, 39, 76, 22,  3, 28, 94, 32,  6, 49, 65, 41, 34, 18, 23,  8, 47, 62, 60,  3, 63, 33, 13, 80, 52, 31, 54, 73, 43, 70, 26, 16, 69, 57, 87, 83, 31,  3, 93, 70, 81, 47, 95, 77, 44, 29, 68, 39, 51, 56, 59, 63,  7, 25, 70,  7, 77, 43, 53, 64,  3, 94, 42, 95, 39, 18,  1, 66, 21, 16, 97, 20, 50, 90, 16, 70, 10, 95, 69, 29,  6, 25, 61, 41, 26, 15, 59, 63, 35}
 };
 
-int main(int argc, char * argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
-
+int main() {
     for (size_t i = 1; i < tri.size(); i++) {
         for (size_t j = 0; j < tri[i].size(); j++) {
             if (j == 0) {

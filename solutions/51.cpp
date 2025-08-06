@@ -4,13 +4,10 @@
 #include <cassert>
 #include <set>
 #include <optional>
-#include "macros.h"
 
 using namespace std;
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
+int main() {
 
     for (PrimeIterator pit;;++pit) {
         vector<unsigned int> digs = get_digits(*pit);

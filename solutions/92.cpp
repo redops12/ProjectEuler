@@ -2,13 +2,10 @@
 #include <iostream>
 #include <cassert>
 #include <array>
-#include "macros.h"
 
 using namespace std;
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
+int main() {
 
     int count = 0;
     vector<uint8_t> arr(648, 0);

@@ -2,7 +2,6 @@
 #include <iostream>
 #include <cstdint>
 #include <cassert>
-#include "macros.h"
 
 using namespace std;
 
@@ -20,10 +19,7 @@ uint64_t chain_length(uint64_t x) {
     }
 }
 
-int main(int argc, char * argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
-
+int main() {
     uint64_t max_num = 0;
     for (uint64_t i = 0; i < 1000000; i++) {
         uint64_t rc = chain_length(i);
@@ -34,5 +30,3 @@ int main(int argc, char * argv[]) {
     }
     cout << max_num << endl;
 }
-
-

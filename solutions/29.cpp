@@ -2,14 +2,10 @@
 #include <set>
 #include <iostream>
 #include <cassert>
-#include "macros.h"
 
 using namespace std;
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
-
+int main() {
     set<Factorized> seen;
     for (int a = 2; a <= 100; a++) {
         Factorized f(a);

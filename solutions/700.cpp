@@ -2,14 +2,10 @@
 #include <iostream>
 #include <cassert>
 #include <cstdint>
-#include "macros.h"
 
 using namespace std;
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
-
+int main() {
     uint64_t mod = 4503599627370517;
     uint64_t add = 1504170715041707;
     ExtendedEuclidean ex(static_cast<int64_t>(mod), static_cast<int64_t>(add));

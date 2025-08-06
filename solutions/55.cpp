@@ -3,14 +3,11 @@
 #include <cassert>
 #include <boost/multiprecision/cpp_int.hpp>
 #include <vector>
-#include "macros.h"
 
 using namespace std;
 using namespace boost::multiprecision;
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
+int main() {
 
     int count = 0;
     for (size_t i = 0; i < 10000; i++) {

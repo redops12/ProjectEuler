@@ -5,15 +5,11 @@
 #include <boost/multiprecision/cpp_int.hpp>
 #include "prime.h"
 #include "number_theory.h"
-#include "macros.h"
 
 using namespace std;
 using namespace boost::multiprecision;
 
-int main(int argc, char * argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
-
+int main() {
     cpp_int max_x = 0;
     int max_d;
     for (int D = 2; D <= 1000; D++) {

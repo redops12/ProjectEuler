@@ -3,16 +3,13 @@
 #include <iostream>
 #include <cassert>
 #include <boost/multiprecision/cpp_int.hpp>
-#include "macros.h"
 
 using namespace std;
 using big_int = boost::multiprecision::number<
     boost::multiprecision::cpp_int_backend<>,
     boost::multiprecision::et_off>;
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
+int main() {
 
     uint64_t total = 0;
     for (unsigned int i = 1; i <= 100; i++) {

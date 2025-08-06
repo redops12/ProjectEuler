@@ -1,13 +1,9 @@
 #include <iostream>
 #include <cassert>
-#include "macros.h"
 
 using namespace std;
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
-
+int main() {
     int max_solutions = 0;
     size_t max_p = 0;
     for (size_t p = 0; p < 1000; p++) {

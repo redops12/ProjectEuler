@@ -3,13 +3,10 @@
 #include <cassert>
 #include <unordered_set>
 #include <cstdint>
-#include "macros.h"
 
 using namespace std;
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
+int main() {
 
     unordered_set<uint64_t> fracs;
     fracs.reserve(1000000);

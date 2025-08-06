@@ -4,15 +4,11 @@
 #include <vector>
 #include <algorithm>
 #include <boost/multiprecision/cpp_int.hpp>
-#include "macros.h"
 
 using namespace std;
 using namespace boost::multiprecision;
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
-
+int main() {
     vector<int> perm = {1,2,3,4,5,6,7,8,9,10};
     cpp_int max_start = 0;
     do {

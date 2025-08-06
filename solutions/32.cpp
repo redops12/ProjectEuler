@@ -4,14 +4,10 @@
 #include <sstream>
 #include <set>
 #include <cstdint>
-#include "macros.h"
 
 using namespace std;
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
-
+int main() {
     string expr = "*123456789=";
     set<int> seen;
     do {

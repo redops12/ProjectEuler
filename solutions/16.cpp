@@ -1,14 +1,10 @@
 #include <boost/multiprecision/cpp_int.hpp>
 #include <iostream>
-#include "macros.h"
 
 using namespace boost::multiprecision;
 using namespace std;
 
-int main(int argc, char * argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
-
+int main() {
     cpp_int x = 1;
     for (int i = 0; i < 1000; i++) {
         x *= 2;

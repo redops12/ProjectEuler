@@ -4,7 +4,6 @@
 #include <cassert>
 #include <set>
 #include <map>
-#include "macros.h"
 
 using namespace std;
 
@@ -25,9 +24,7 @@ struct cmp {
 };
 
 // https://math.stackexchange.com/questions/403519/primality-of-the-numbers-in-the-form-of-2n2-1
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
+int main() {
 
     static const unsigned int MAX = 10000;
     map<unsigned int, unsigned int> seen;

@@ -2,13 +2,10 @@
 #include <iostream>
 #include <cassert>
 #include <vector>
-#include "macros.h"
 
 using namespace std;
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
+int main() {
 
     size_t N = 1500000;
     // for m and n odd and coprime m > n

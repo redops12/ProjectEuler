@@ -2,7 +2,6 @@
 #include <cassert>
 #include "prime.h"
 #include "number_theory.h"
-#include "macros.h"
 #include <boost/multiprecision/cpp_int.hpp>
 
 using big_int = boost::multiprecision::number<
@@ -124,10 +123,7 @@ void factorization_iterator_tests() {
     }
 }
 
-int main(int argc, char * argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
-
+int main() {
     general_pent_tests();
     n_choose_r_tests();
     is_square_tests();

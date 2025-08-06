@@ -4,13 +4,10 @@
 #include <cassert>
 #include <map>
 #include <vector>
-#include "macros.h"
 
 using namespace std;
 
-int main (int argc, char *argv[]) {
-    UNUSED(argc);
-    UNUSED(argv);
+int main() {
 
     static const uint64_t MAX = 10000000;
     Totient tfn(MAX);
