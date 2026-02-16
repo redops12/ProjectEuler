@@ -72,3 +72,27 @@ void Frac<T>::reduce() {
     this->num   /= gcd_res;
     this->denom /= gcd_res;
 }
+
+template <class T>
+Polynomial<T>::Polynomial(std::vector<T> coeffs): coeffs(coeffs) {}
+
+template <class T>
+T Polynomial<T>::evaluate(T x) {
+    T res = coeffs[0];
+    T mult = x;
+    for (size_t i = 1; i < coeffs.size(); i++) {
+        res += coeffs[i] * mult;
+        mult *= x;
+    }
+    return res;
+}
+
+template <class T>
+T Polynomial<T>::operator()(T x) {
+    return this->evaluate(x);
+}
+
+template <class T>
+unsigned int Polynomial<T>::degree() const {
+    return coeffs.size() - 1;
+}

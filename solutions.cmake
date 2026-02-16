@@ -288,6 +288,10 @@ add_executable( sol98 solutions/98.cpp )
 
 add_executable( sol99 solutions/99.cpp )
 
+add_executable( sol101 solutions/101.cpp )
+target_link_libraries( sol101 PRIVATE lib )
+add_test(NAME test101 COMMAND sol101)
+
 add_executable( sol193 solutions/193.cpp )
 target_link_libraries( sol193 PRIVATE lib )
 add_test(NAME test193 COMMAND sol193)
@@ -305,3 +309,9 @@ add_test(NAME test700 COMMAND sol700)
 add_executable( sol926 solutions/926.cpp )
 target_link_libraries( sol926 PRIVATE lib )
 add_test(NAME test926 COMMAND sol926)
+
+add_executable( soladvent2 solutions/advent2.cpp )
+target_link_libraries( soladvent2 PRIVATE lib )
+add_test(NAME testadvent2 COMMAND soladvent2)
+
+add_executable( soladvent3 solutions/advent3.cpp )

@@ -123,6 +123,14 @@ void factorization_iterator_tests() {
     }
 }
 
+void polynomial_tests() {
+    Polynomial<int> p({1, 2, 3});
+    assert(p.evaluate(0) == 1);
+    assert(p.evaluate(1) == 6);
+    assert(p.evaluate(2) == 17);
+    assert(p.evaluate(3) == 34);
+}
+
 int main() {
     general_pent_tests();
     n_choose_r_tests();
@@ -133,4 +141,5 @@ int main() {
     mobius_tests();
     totient_tests();
     factorization_iterator_tests();
+    polynomial_tests();
 }

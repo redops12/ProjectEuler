@@ -134,6 +134,26 @@ class DivisorSum {
     unsigned int at_proper(unsigned int val);
 };
 
+template <class T>
+class Polynomial {
+    std::vector<T> coeffs;
+    public:
+    Polynomial(std::vector<T> coeffs);
+    unsigned int degree() const;
+    T evaluate(T x);
+    T operator()(T x);
+    friend std::ostream& operator<<(std::ostream& os, const Polynomial<T>& p) {
+        for (size_t i = 0; i < p.coeffs.size(); i++) {
+            os << p.coeffs[i] << "x^" << i;
+            if (i != p.coeffs.size() - 1) {
+                os << " + ";
+            }
+        }
+
+        return os;
+    }
+};
+
 boost::multiprecision::cpp_int partition(uint32_t n);
 
 // include template definitions
