@@ -1,49 +1,34 @@
-#include <eigen3/Eigen/Dense>
 #include <iostream>
 #include <cassert>
 #include "number_theory.h"
 
 using namespace std;
-using namespace Eigen;
 
 int main () {
-    // initialize x^3
-    Polynomial<int64_t> p({1,-1,1,-1,1,-1,1,-1,1,-1,1});
+    Polynomial<Int128> p({1,-1,1,-1,1,-1,1,-1,1,-1,1});
+    // Polynomial<Int128> p({1,1,1,1,1,1,1,1,1,1,1});
+    // Polynomial<Int128> p({0,0,0,1});
 
     // seq
-    vector<int64_t> out;
-    for (unsigned int n = 1; n <= p.degree(); n++) {
+    vector<Int128> out;
+    for (Int128 n = 1; n <= p.degree(); n = n + 1) {
         out.push_back(p(n));
     }
 
-    int64_t bops = 0;
+    Int128 bops = 0;
     for (size_t i = 0; i < out.size(); i++) {
-        MatrixXd A(i + 1, i + 1);
-        for (long j = 0; j < A.rows(); j++) {
-            for (long k = 0; k < A.cols(); k++) {
-                A(j, k) = pow(j + 1, k);
-            }
+        vector<pair<Int128, Int128>> b;
+        for (size_t j = 0; j <= i; j++) {
+            b.push_back({j + 1, out[j]});
         }
-        VectorXd b(i + 1);
-        for (long j = 0; j < b.size(); j++) {
-            b(j) = out[j];
-        }
-        cout << A << endl;
-        // TODO: These values are rounded which is killing the solution
-        VectorXd new_coefs = A.inverse() * b;
-        cout << new_coefs.transpose() << endl;
-        Polynomial<int64_t> op(vector<int64_t>(new_coefs.data(), new_coefs.data() + new_coefs.size()));
-        cout << op << endl;
-        int64_t test_num = 1;
+        Polynomial<Frac<Int128>> op = lagrange_interpolation(b);
+        Int128 test_num = 1;
         while (op(test_num) == p(test_num)) {
-            test_num++;
+            test_num = test_num + 1;
         }
-        bops += op(test_num);
-        cout << op(test_num) << endl;
+        bops = bops + op(test_num).num;
     }
-    cout << bops << endl;
+    assert(bops == 37076114526);
 
     return 0;
 }
-
-

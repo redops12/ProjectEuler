@@ -45,3 +45,20 @@ bool is_pandigital(const uint64_t x, unsigned int n) {
     }
     return true;
 }
+
+Int128::operator std::string() const {
+    std::vector<unsigned int> digits = get_digits(this->val);
+    std::string res;
+    for (size_t i = 0; i < digits.size(); i++) {
+        res += std::to_string(digits[i]);
+    }
+    return res;
+}
+
+Int128::operator __int128_t() const {
+    return this->val;
+}
+
+std::string to_string(Int128 x) {
+    return static_cast<std::string>(x);
+}
