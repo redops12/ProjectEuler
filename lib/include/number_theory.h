@@ -66,7 +66,6 @@ class RadicalRational {
     void invert();
     void reduce();
     float to_float();
-    inline bool operator<(const RadicalRational &rhs) const;
     inline bool operator==(const RadicalRational &rhs) const;
     void sub(int right);
 };

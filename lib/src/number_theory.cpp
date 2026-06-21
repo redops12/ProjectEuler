@@ -70,10 +70,6 @@ float RadicalRational::to_float() {
     return (static_cast<float>(a) + (static_cast<float>(b) * sqrt_c)) / static_cast<float>(d);
 }
 
-inline bool RadicalRational::operator<(const RadicalRational &rhs) const {
-    return a < rhs.a || b < rhs.b || c < rhs.c || d < rhs.d;
-}
-
 inline bool RadicalRational::operator==(const RadicalRational &rhs) const {
     return a == rhs.a &&
         b == rhs.b &&

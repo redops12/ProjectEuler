@@ -11,6 +11,7 @@ set(SRC_FILES
     ${CMAKE_CURRENT_SOURCE_DIR}/src/graph.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/roman_numeral.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/src/DivisorSum.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/geometry.cpp
 )
 
 add_library (lib ${SRC_FILES})

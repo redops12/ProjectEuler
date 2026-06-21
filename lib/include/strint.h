@@ -44,20 +44,7 @@ public:
     DigIterator end();
 };
 
-class Int128 {
-public:
-    __int128_t val;
-    Int128(__int128_t val): val(val) {}
-
-    operator std::string() const;
-    operator __int128_t() const;
-    friend std::ostream& operator<<(std::ostream& os, const Int128& p) {
-        os << static_cast<std::string>(p);
-        return os;
-    }
-};
-
-std::string to_string(Int128 x);
+std::string to_string(__int128_t x);
 
 // include template definitions
 #include "strint.tpp"
